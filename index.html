@@ -284,54 +284,61 @@
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Draggable Element)</i></h4>
 					<h3>The Drag Start event</h3>
-					<h8 class="fragment fade-in-then-semi-out">Captures the element ID of the Dragged element</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">Captures the element ID of the Source container</h8><br/>					
-					<h8 class="fragment fade-in-then-semi-out">Loads the data in the event DTO payload</h8><br/>					
+					<h8 class="fragment fade-in-then-semi-out">Short-Stop Default Behavior and Bubbling</h8><br/>									
+					<h8 class="fragment fade-in-then-semi-out">Captures the element Id of the Dragged Element</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Captures the element Id of the Source Container</h8><br/>					
+					<h8 class="fragment fade-in-then-semi-out">Loads the data in the Event DTO Payload</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Changes the element's CSS presentation</h8><br/>									
 				</section>
 
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Draggable Element)</i></h4>
 					<h3>The Drag event</h3>
-					<h8 class="fragment fade-in-then-semi-out">Affects the dragged element's CSS presentation</h8><br/>									
+					<h8 class="fragment fade-in-then-semi-out">Short-Stop Default Behavior and Bubbling</h8><br/>									
+					<h8 class="fragment fade-in-then-semi-out">Affects the Dragged Element's CSS presentation</h8><br/>									
 				</section>
 
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Draggable Element)</i></h4>
 					<h3>The Drag Stop event</h3>
-					<h8 class="fragment fade-in-then-semi-out">Resets the dragged element's CSS presentation</h8><br/>									
+					<h8 class="fragment fade-in-then-semi-out">Short-Stop Default Behavior and Bubbling</h8><br/>									
+					<h8 class="fragment fade-in-then-semi-out">Resets the Dragged Element's CSS presentation</h8><br/>									
 				</section>
 
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Target Container)</i></h4>
 					<h3>The Drag Enter event</h3>
-					<h8 class="fragment fade-in-then-semi-out">Changes the target container's CSS presentation</h8><br/>									
+					<h8 class="fragment fade-in-then-semi-out">Short-Stop Default Behavior and Bubbling</h8><br/>									
+					<h8 class="fragment fade-in-then-semi-out">Changes the Target Container's CSS presentation</h8><br/>									
 				</section>
 
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Target Container)</i></h4>
 					<h3>The Drag Over event</h3>
-					<h8 class="fragment fade-in-then-semi-out">Changes the target container's CSS presentation</h8><br/>									
+					<h8 class="fragment fade-in-then-semi-out">Short-Stop Default Behavior and Bubbling</h8><br/>									
+					<h8 class="fragment fade-in-then-semi-out">Changes the Target Container's CSS presentation</h8><br/>									
 				</section>
 
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Target Container)</i></h4>
 					<h3>The Drag Leave event</h3>
-					<h8 class="fragment fade-in-then-semi-out">Resets the target container's CSS presentation</h8><br/>									
+					<h8 class="fragment fade-in-then-semi-out">Short-Stop Default Behavior and Bubbling</h8><br/>									
+					<h8 class="fragment fade-in-then-semi-out">Resets the Target Container's CSS presentation</h8><br/>									
 				</section>
 
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Target Container)</i></h4>
 					<h3>The Drop event</h3>
+					<h8 class="fragment fade-in-then-semi-out">Short-Stop Default Behavior and Bubbling</h8><br/>									
 					<h8 class="fragment fade-in-then-semi-out">Processes DOM changes to the Dragged element</h8><br/>									
 					<h8 class="fragment fade-in-then-semi-out">Processes any required data</h8><br/>									
-					<h8 class="fragment fade-in-then-semi-out">Resets the target container's CSS presentation</h8><br/>									
+					<h8 class="fragment fade-in-then-semi-out">Resets the Target Container's CSS presentation</h8><br/>									
 				</section>
 
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
-					<h3>Reminder:<br/>
-						These are Standard<br/>
-						HTML5 Events</h3>
+					<h3>Additional Consideration</h3>
+					<h8 class="fragment fade-in-then-semi-out">Set/Get Data Transfer Object payload</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Set Drop Effects To Control Drop Rules</h8><br/>
 				</section>
 
 				<!-- SALESFORCE -->	
@@ -343,7 +350,8 @@
 				</section>			
 
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
-					<h4>Standard HTML in Visualforce</h4> 
+					<h4>Implemening Standard HTML <br/>
+						Drag and Drop in Visualforce</h4> 
 					<img src="img/CasePicker1.png" />	
 				</section>
 
@@ -409,51 +417,154 @@
 					<h3>Dissection 1 - Visualforce</h3> 
 				</section>
 
-				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
-					<h4>HTML Fundamentals</h4>
-					<h8>by Craig Shoemaker</h2><br/>
-					<a href="https://pluralsight.pxf.io/C0114" target="_none"> 						
-						<img src="img/CraigCourse.png" style="border:none;" />
-					</a>							
+
+				<section data-transition="slide-in fade-out" >
+					<h3>How do you implement<br/>
+						HTML Drag and Drop in LWCs
+					</h3> 
 				</section>
 
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
-					<h3>How Is It Different in LWC?</h3>
-					
-					
-					
-					
-					<h8 class="fragment fade-in-then-semi-out">It's a UI messaging system</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">DOM based Event Driven programming</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">Movable Elements set as "Draggable"</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">Container Elements get Listeners</h8><br/>										
-					<h8 class="fragment fade-in-then-semi-out">Event Listeners bind to JavaScript handlers</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">JavaScript handlers manipulate the DOM and data</h8><br/>
+					<h4>LWC Drag and Drop Differences</h4>
+					<h8 class="fragment fade-in-then-semi-out">Take a Hybrid Approach</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Custom Event Messaging Payload</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Encapsulated Component Styling</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Facilitates Data Manipulation</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Data Driven Reactive Rendering</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Supports Tight and Loose Coupling</h8><br/>
 				</section>
-
-
-
-
-
-
 
 
 
 				<section data-transition="slide-in fade-out" >
-					<h4>Sample 2: Tightly Coupled LWC - UI</h4> 
+					<h4>What does it look like? (CODE HERE)</h4> 
+					<img src="img/.png" />	
+				</section>
+
+
+
+
+
+
+
+
+
+
+				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+					<h4>Two Architectural Approaches</h4>
+					<table width="100%">
+						<tr>
+							<td width="50%">
+								<div class="fragment fade-in-then-semi-out">
+									<h4><u>Tightly Coupled</u></h4>
+									<h8><p><i>components can<br/>
+										be dragged to and from<br/>
+										source and target container<br/>
+										components										
+									</i></p></h8>
+								</div>
+							</td>
+							<td width="50%">
+								<div class="fragment fade-in-then-semi-out">
+									<h4><u>Loosely Coupled</u></h4>
+								 	<h8><p><i>container components<br/>
+										added to a Flexipage<br/>
+										by an App Builder and<br/>
+										communicate with PubSub<br/>
+									</i>
+									</p></h8>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</section>		
+
+				<section data-transition="slide-in fade-out" >
+					<h4>Dissection 2 - Tightly Coupled LWCs</h4> 
 					<img src="img/CasePicker2.png" />	
 				</section>
 
 				<section data-transition="slide-in fade-out" >
-					<h4>Sample 3: Loosley Coupled LWC</h4> 
+					<h4>Dissection 3 - Loosley Coupled LWCs</h4> 
 					<img src="img/CasePicker3.png" />	
 				</section>
 
+				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+					<h3>Where Can I Learn More?</h3>
+				</section>
 
+				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+					<a href="https://pluralsight.pxf.io/C0114" target="_none"> 						
+						<img src="img/CraigCourse.png" style="border:none;" />
+					</a>							
+					<br/>
+					<h4>HTML Fundamentals</h4>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<a href="https://medium.com/@jacobwarduk/how-to-correctly-use-preventdefault-stoppropagation-or-return-false-on-events-6c4e3f31aedb" target="_none"> 
+						<img src="img/MediumWard.png" style="border:none;" width="60%"/>
+					</a>
+					<br/>	
+					<h4>Correctly Short-Stopping Events</h4>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API" target="_none"> 
+						<img src="img/MDNContent.png" style="border:none;" />
+					</a>
+					<br/>	
+					<h4>Mozilla Developer Network</h4>
+				</section>
+				
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<a href="https://pluralsight.pxf.io/C0066" target="_none"> 						
+						<img src="img/ChuckPbP.png" style="border:none;" />
+					</a>
+					<br/>							
+					<h4>A Lightning Web Components Primer</h4>
+				</section>
+
+				<section data-transition="fade-in fade-out">
+					<a href="https://www.sfplaybyplay.com" target="_none"> 						
+						<img src="img/PbPSite.png" width="80%"/>
+					</a>
+					<br/>							
+					<h4>www.sfplaybyplaycom</h4>
+				</section>
+				<section data-transition="fade-in fade-out">
+					<a href="https://www.sfplaybyplay.com" target="_none"> 						
+						<img src="img/PbPSiteCallout.png" width="80%"/>
+					</a>
+					<br/>							
+					<h4>www.sfplaybyplaycom</h4>
+				</section>
+				<section data-transition="fade-in fade-out">
+					<a href="https://www.sfplaybyplay.com" target="_none"> 						
+						<img src="img/PbPTiles3.png" width="60%"/>
+					</a>
+					<br/>							
+					<h4>www.sfplaybyplaycom</h4>
+				</section>
+
+
+				
+
+
+			
 				<section style="text-align: left;" data-background-image="img/ForcelandiaHalfPage.png" data-transition="slow">
-					<br/><br/><br/><br/>
-					<div align="center" style="font-size: 86px; color:Black">Q and A</div>
+					<div align="center" style="font-size: 86px;" >Q and A</div>
 				</section>	
+
+
+
+
+
+
+
+
+
+
 
 				<section style="text-align: left;" data-background-image="img/ForcelandiaBackground.jpg" data-transition="slow">
 					<h4 style="color:Black">Next Steps:</h4>
