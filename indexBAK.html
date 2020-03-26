@@ -1,0 +1,1054 @@
+<!doctype html>
+<html lang="en">
+  <!-- version for VirtualDraamin2020 -->
+	<head>
+		<meta charset="utf-8">
+
+		<title>Exploring LWC Drag and Drop</title>
+
+		<meta name="description" content="VirtualDreamin 2020 LWC presentation">
+		<meta name="author" content="Don Robins">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- For Chalkboard -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!-- Overrides for styles -->
+		<style>
+
+			.reveal section img { background:none; border:none; box-shadow:none; }	
+
+		</style>
+
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			
+				<section data-background-size="contain" data-background-image="img/VD2020.png" data-transition="slow" >
+				</section>
+
+				<!-- 
+				<section data-background-size="contain" data-background-image="img/2019Sponsors1.png" data-transition="slow" >
+				</section>
+				
+				<section data-background-size="contain" data-background-image="img/2019Sponsors2.png" data-transition="slow" >
+				</section>
+				-->
+
+				<section data-transition="fade-in" data-transition="slow" data-background-image="img/ForcelandiaLogoUpperRight.jpg" >
+					<h3>Exploring</br>Drag and Drop</br>with</br>Lightning Web Components</h3>
+					<h7>(or the joy of Visual Magic)</h7>
+				</section>
+
+				<section data-transition="slide" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>Don Robins</h3>
+					<p/>
+					<h8>Technical Educator</h8><br/>
+					<h8>8x Salesforce MVP</h8><br/>
+					<h8>Salesforce Certified PDII</h8><br/>
+					<h8>Salesforce Training Partner</h8><br/>
+					<h8>Salesforce Certified Instructor</h8><br/>
+					<h8>Author of Books, Posts, Articles, Trailhead</h8><br/>
+					<h8>Pluralsight "Salesforce Play by Play" Producer</h8><br/>
+				</section>
+
+				
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>Topics</h3>
+					<p/>
+					<h8>What is Drag and Drop</h8><br/>
+					<h8>Drag and Drop Use Cases</h8><br/>
+					<h8>Terminology, Attributes and Events</h8><br/>
+					<h8>Standard HTML</h8><br/>					
+					<h8>Tightly Coupled LWCs</h8><br/>										
+					<h8>Loosely Coupled LWCs</h8><br/>										
+					<h8>Summary and Take-Aways</h8><br/>										
+				</section>
+
+				<!-- Merge the QR with the fade in URL-->
+				<section data-transition="slow" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<img src="img/lwc_dnd_20qr.png"  style="border:none;" height="50%" width="50%" align="center" />
+					<div >
+						<h4>	
+							<a href="https://forcementor.github.io/lwc_dnd_20">
+								<i>https://forcementor.github.io/lwc_dnd_20</i>
+							</a>	
+						</h4>		
+					</div>
+				</section>
+		
+				<section data-transition="fade-in fade-out" >
+					<h4>Sample 1: Standard HTML - UI</h4> 
+					<img src="img/CasePicker1.png" />	
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>Draggable Source Node</h4> 
+					<img src="img/html1.png" />	
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>Potential Drop Target Node</h4> 
+					<img src="img/html2.png" />	
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>Another Potential Drop Target Node</h4> 
+					<img src="img/html3.png" />	
+				</section>
+
+
+
+
+				<section data-transition="slide-in fade-out" >
+					<h4>Sample 2: Tightly Coupled LWC - UI</h4> 
+					<img src="img/CasePicker2.png" />	
+				</section>
+
+				<section data-transition="slide-in fade-out" >
+					<h4>Sample 3: Loosley Coupled LWC</h4> 
+					<img src="img/CasePicker3.png" />	
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>...and expose you to:</h3>
+					<h8 class="fragment fade-in-then-semi-out">Software development patterns</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">that layer your code base</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">and decouple application complexity</h8><br/>										
+				</section>
+
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>What's NOT my goal?</h3>
+				</section>
+
+				<section data-background-image="img/clockwork_orange.gif" data-transition="fade-in fade-out">
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					
+					<h3>To NOT brainwash you...</h3>
+					<div style="font-size: 15px;"><i>"A Clockwork Orange" &#9400; 1971 - courtesy of Warner Bros.</i></div>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>...and to NOT persuade you to:</h3>
+					<h8 class="fragment fade-in-then-semi-out">Adopt any complex architectural framework</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">requiring you to redesign your code base</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">and max out your Apex code limit</h8><br/>										
+				</section>
+
+         		<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>What - Why - How - Where</h3>
+				</section>
+
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>Let's identify the problem...</h3>
+				</section>
+
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<img src="img/Mongo.jpg" />	
+					<h4 class="fragment fade-in">
+						MONGO
+					</h4>	
+					<h5 class="fragment fade-in">
+						<i>(Alex Karras)</i>	
+					</h5>
+				</section>
+	
+				<section data-transition="fade-in slide-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<a href="https://en.wikipedia.org/wiki/Blazing_Saddles" target="_none" >
+						<img src="img/blazing_saddles_movie_poster_big.jpg" />	
+					</a>
+					<div style="font-size: 12px;"><i>Courtesy of Warner Bros.</i></div>
+				</section>
+	
+				<section data-transition="fade-in fade-out"
+					data-background-iframe="https://en.wikipedia.org/wiki/Blazing_Saddles" 
+					data-background-interactive >
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+
+					<H4>MONGO</H4>	
+					<img src="img/mongopiano.gif" style="border:none;"/>	
+					
+					<p class="fragment fade-in">
+						<i>hu-MONGO-us</i>
+					</p>
+
+					<p class="fragment fade-in">
+						<i>"...a fusion of HUge, MONstrous, and tremendoUS"</i>
+					</p>
+	
+					<p class="fragment fade-in">
+						"...a thoughtless brute!"
+					</p>
+
+				</section>
+
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>So what does Mongo <br/>
+						have to do with Salesforce?
+					</h3>
+					<h6 class="fragment fade-in">Mongo ~ Mondo</h6>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+						<h3>-mon-</h3>
+						<h6><i>Latin root</i></h6> 
+						<p>
+							Has the meaning "warn"
+						</p>
+
+						<p class="fragment fade-in">
+								Found in such words as:<br/> 
+								<i>
+								admonish, monitor, monster, premonition
+								</i>
+						</p>
+
+						<p class="fragment fade-in">
+						  <i>
+							(not to be confused with -mono-<br/> 
+							from the Greek root -mons- meaning<br/>
+							"one" found in such words as:<br/> 
+							monarch, monotheism, monogamy)
+							</i>
+					</p>
+				</section>
+	
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>mondo</h3>
+					<h6><i>adjective</i></h6> 
+					<p><i>very large or great<br/>
+						in amount or number</i>
+					</p>
+					<p class="fragment fade-in" data-transition="very slow" style="color:red" >
+						<i>
+							(with a hint of a warning)
+						</i>	
+					</p>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>mondo coding pattern</h3>
+					<h6><i>noun</i></h6> 
+					<p><i>programming practices where<br/> 				
+						excessive amounts of<br/>
+						code are haphazardly<br/>
+						contained in any single<br/>
+						programmatic construct</i>
+					</p>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>mondo coding pattern</h3>
+					<h6><i>noun</i></h6> 
+					<p><i>programming practices where<br/> 				
+						<span style="color:red">excessive</span> amounts of<br/>
+						code are <span style="color:red">haphazardly</span><br/>
+						contained in any <span style="color:red">single</span><br/>
+						programmatic construct</i>
+					</p>
+				</section>
+
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>In the programming world<br/>
+					mondo coding patterns<br/>
+					are considered an<br/>
+					<i>anti-pattern</i>
+					</h3>
+				</section>				
+	
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>anti-pattern</h3>
+					<h6><i>noun</i></h6> 
+					<p><i>a commonly used<br/>
+						process, structure or pattern<br/>
+						expected to be effective<br/>
+						but will have unintended<br/>
+						consequences - and where a<br/>
+						better and proven way exists</i>
+					</p>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>anti-pattern</h3>
+					<h6><i>noun</i></h6> 
+					<p><i>a commonly used<br/>
+						process, structure or pattern<br/>
+						expected to be effective<br/>
+						but will have unintended<br/>
+						consequences - <span style="color:red">and where a<br/>
+						better and proven way exists</span></i>
+					</p>
+				</section>
+
+				<section data-transition="fade-in fade-out"
+					data-background-iframe="https://en.wikipedia.org/wiki/Anti-pattern" 
+					data-background-interactive >
+				</section>
+
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>mondo-mania</h3>
+					<h6><i>noun</i></h6> 
+					<p><i>a preponderance and<br/>
+						ever expanding use of<br/>
+						mondo coding anti-patterns<br/>
+					</i>
+					</p>	
+				</section>
+
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>Mondo-mania<br/>
+					runs rampant in,<br/>
+					and terrorizes many<br/>
+					Salesforce orgs<br/></h3>
+					<div class="fragment fade-in">
+						<h6>...it is "thoughtless" and "brutish"</h6>
+					</div>
+					<h6 class="fragment fade-in">(like Mongo)</h6>
+				</section>
+	
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>How can you detect<br/>
+						mondo coding<br/>
+						anti-patterns<br/>
+						in your org?
+					</h3>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>They "smell"</h3>
+					<h6 class="fragment fade-in">(like Mongo)</h6>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>code smell</h3>
+					<h6><i>noun</i></h6> 
+					<p><i>a characteristic of source code <br/>suggesting a deeper problem</i></p>
+				</section>
+
+				<section data-transition="fade-in fade-out"
+					data-background-iframe="https://en.wikipedia.org/wiki/Code_smell" 
+					data-background-interactive >
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>What are some<br/>mondo coding anti-pattern<br/>smells?</h4>
+					<h8 class="fragment fade-in-then-semi-out">Excessive line length</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Excessive conditional branching</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Excessive loops</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Excessive nested logic</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Excessive DML operations </h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Excessive mixed concerns</i></h8> 	
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>What are some<br/>mondo coding anti-pattern<br/>smells?</h4>
+					<h8><span style="color:red">Excessive</span> line length</h8><br/>
+					<h8><span style="color:red">Excessive</span> conditional branching</h8><br/>
+					<h8><span style="color:red">Excessive</span> loops</h8><br/>
+					<h8><span style="color:red">Excessive</span> nested logic</h8><br/>					
+					<h8><span style="color:red">Excessive</span> DML operations </h8><br/>
+					<h8><span style="color:red">Excessive</span> mixed concerns</i></h8> 	
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>concern</h3>
+					<h6><i>noun</i></h6> 
+					<p><i>a set of information, data or logic<br/>
+						that effects some specific<br/>
+						behavior or aspect of<br/>
+						a software application</i></p>
+				</section>
+
+				<section data-transition="fade-in fade-out"
+					data-background-iframe="https://en.wikipedia.org/wiki/Concern_(computer_science)" 
+					data-background-interactive >
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Where do mondo<br/>coding anti-patterns<br/>hide out?</h4>
+					<h8 class="fragment fade-in-then-semi-out">Apex Triggers</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Apex Classes Methods</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Visualforce Pages</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Lightning Components</h8><br/>					
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Where do mondo<br/>coding anti-patterns<br/>hide out?</h4>
+					<h8>Apex Triggers</h8><br/>
+					<h8>Apex Classes Methods</h8><br/>
+					<h8 style="text-decoration: line-through; color:grey">Visualforce Pages</h8><br/>
+					<h8 style="text-decoration: line-through; color:grey">Lightning Components</h8><br/>					
+				</section>
+
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>Let's sniff out some examples...</h3>
+				</section>
+
+			    <section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>What "smells" can we find in this Class?</h4>
+					<style type="text/css">
+						.gist {width:100% !important;}
+						.gist-file
+						.gist-data {max-height: 500px;max-width: 100%;}
+					</style>
+					<script src="https://gist.github.com/forcementor/ad970b3693c973573d18faa56a6b360d.js"></script>
+			    </section>
+
+			    <section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>What "smells" can we find in this Controller Extension?</h4>
+					<style type="text/css">
+						.gist {width:100% !important;}
+						.gist-file
+						.gist-data {max-height: 500px;max-width: 100%;}
+					</style>
+					<script src="https://gist.github.com/forcementor/48e27be9611f02de5fc7686be752cd45.js"></script>
+			    </section>
+
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>What's the solution?</h3>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h1>CLEAN CODE</h1>
+				</section>
+
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>clean code</h3>
+					<h6><i>noun</i></h6> 
+					<p><i>code that can be understood with<br/>
+						little effort and in a short time<br>
+						<b>- intuitively understandable -</b><br/>
+						achieved by consciously using good<br/>
+						software design principles, patterns<br/>
+						and practices
+					</i></p>	
+				</section>
+
+ 				<section data-transition="fade-in fade-out"
+					data-background-iframe="https://de.wikipedia.org/wiki/Clean_Code" 
+					data-background-interactive >
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=nodl_" target="_none">
+						<img src="img/CleanCodeCover.jpg" style="border:none;" height="95%" width="95%"/>
+					</a>
+				</section>	
+
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>What is one<br/> 
+						Clean Code<br/>
+						design principle<br/>
+						that can help resolve<br/>
+						mondo-mania?
+					</h3>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h1>SoC</h1>
+					<h3 class="fragment fade-in">Separation of Concerns</h2>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>separation of concerns</h3>
+					<h6><i>noun</i></h6> 
+					<p><i>a software design principal<br/>
+						of breaking down code into<br/>
+						distinct sections, each<br/>
+						addressing a specific concern</i></p>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+						<a href="https://trailhead.salesforce.com/content/learn/modules/apex_patterns_sl/apex_patterns_sl_soc" target="_none">
+							<img src="img/TrailheadSoc.jpg" style="border:none;" height="95%" width="95%"/>
+						</a>
+				</section>		
+
+				<section data-transition="fade-in fade-out"
+					data-background-iframe="https://en.wikipedia.org/wiki/Separation_of_concerns" 
+					data-background-interactive >
+				</section>
+				
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>
+						<q cite="https://en.wikipedia.org/wiki/Separation_of_concerns">A program that embodies SoC well is called a modular program</q>						
+					</h3>
+					<h8 class="fragment fade-in-then-semi-out">More Extensible</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">More Maintainable</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">More Testable</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">More Reusable</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">More Scalable</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">More Understandable</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">More Trainable</h8><br/>
+				</section>		
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>SoC and Modularity Key Points</h3>
+					<h6 class="fragment fade-in-then-semi-out"><i>"The value of Separation of Concerns<br/>
+							is simplifying development and maintenance<br/>
+							of computer programs.</i>
+					</h6>
+					<h6 class="fragment fade-in-then-semi-out">
+						<i>When concerns are well separated,<br/>
+							individual sections can be developed<br/>
+							and updated independently.</i>
+					</h6>
+					<h6 class="fragment fade-in-then-semi-out">
+						<i>Of especial value is the ability to later <br/>
+							improve or modify one section of code without<br/>
+							having to know the details of other sections,<br/>
+							and without having to make corresponding<br/>
+							changes to those sections."</i>
+					</h6>
+				</section>				
+
+				<section data-transition="fade-in fade-out"
+					data-background-iframe="https://en.wikipedia.org/wiki/Modular_programming" 
+					data-background-interactive >
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>How do you implement<br/>
+						Separation of Concerns?</h3>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>SoC <br/>
+						is an implementation<br/> 
+						approach that leverages<br/>
+						collections of<br/>
+						software design patterns</h3>
+					<h6 class="fragment fade-in"><i>
+						(BUT it's NOT a framework!)</i>
+					</h6>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>software framework</h3>
+					<h6><i>noun</i></h6> 
+					<p><i>a collection of reusable code <br/>
+						that implements a solution to a <br/>
+						common problem in software design</i></p>
+				</section>				
+			
+				<section data-transition="fade-in fade-out"
+					data-background-iframe="https://en.wikipedia.org/wiki/Software_framework" 
+					data-background-interactive >
+				</section>
+
+			    <section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>The fflib Apex Common Framework</h4>
+					<a href="https://github.com/financialforcedev/fflib-apex-common" target="_none">
+						<img src="img/fflibgithub.jpg"  style="border:none;" height="95%" width="75%"/>
+					</a>		
+				</section>
+
+				<section data-transition="fade-in fade-out"
+					data-background-iframe="https://andyinthecloud.com/2017/04/01/force-com-enterprise-architecture-second-edition/" 
+					data-background-interactive >
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>Frameworks != Patterns</h3>
+					<div class="fragment fade-in">
+						<h6><i>Frameworks implement design patterns,<br/>
+							but design patterns can be<br/>
+							implemented without a framework<br/>
+							(much easier)
+						</i>
+						</h6>
+					</div>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>software design pattern</h3>
+					<h6><i>noun</i></h6> 
+					<p><i>a reusable solution<br/>
+						to a common problem<br/>
+						in software design</i></p>
+				</section>				
+
+				<section data-transition="fade-in fade-out"
+						data-background-iframe="https://en.wikipedia.org/wiki/Software_design_pattern" 
+						data-background-interactive >
+
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>What SoC<br/>design patterns<br/>can help resolve<br/>mondo-mania<br/>in Salesforce?</h4>
+					<h8 class="fragment fade-in-then-semi-out">Service Layer</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Domain Layer</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Selector Layer</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Unit of Work</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Trigger Handler</h8><br/>
+				</section>
+	
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>What SoC<br/>design patterns<br/>can help resolve<br/>mondo-mania<br/>in Salesforce?</h4>
+					<h8><i>Service Layer</i><br/></h8>
+					<h8><span style="text-decoration: line-through; color:grey">Domain Layer</span></h8><br/>
+					<h8><span style="text-decoration: line-through; color:grey">Selector Layer</span></h8><br/>
+					<h8><span style="text-decoration: line-through; color:grey">Unit of Work</span></h8><br/>
+					<h8><span style="text-decoration: line-through; color:grey">Trigger Handler</span></h8><br/>
+				</section>				
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>service layer</h3>
+					<h6><i>noun</i></h6> 
+					<p>
+						<i>a set of available services<br/>
+						(sets of software functionalities)<br/>	
+						for the	application’s operations<br/>
+						and their responses</i>
+					</p>	
+				</section>				
+
+				<section data-transition="fade-in fade-out"
+						data-background-iframe="https://en.wikipedia.org/wiki/Service_layer_pattern" 
+						data-background-interactive >
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<a href="https://trailhead.salesforce.com/content/learn/modules/apex_patterns_sl" target="_none">
+						<img src="img/TrailheadServiceLayer.jpg" style="border:none;" height="95%" width="95%"/>
+					</a>
+				</section>		
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>
+						In Apex:
+					</h3>	
+					<h6>The Service Layer sets<br/>
+						the boundary between the<br/>
+						<i>business logic concerns<br/>
+						(the Services)</i><p/>
+						and those of the<br/>
+						<i>calling execution context<br/>
+							(the Clients)</i>
+					</h6>			
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>execution context client</h3>
+					<h6><i>noun</i></h6> 
+					<p>
+						<i>Apex classes or<br/>
+						triggers that are the<br/>
+						entry points for invocation<br/>
+						(controller, trigger, webservice, etc.)
+						</i>
+					</p>	
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<img src="img/apex_mondo_anti_pattern.jpg"  style="border:none;" height="95%" width="95%"/>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<img src="img/apex_service_pattern.jpg"  style="border:none;" height="95%" width="95%"/>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>What does a<br/>
+						Service Layer<br/>
+						implementation<br/>
+						look like in Apex?
+					</h3>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Attendee Registration Reference App</h4>
+					<img src="img/tempflip-soc-events-git.jpg"  style="border:none;" height="95%" width="75%"/>
+				</section>
+
+				<section data-background-video="media/SocClipSilent.mp4" 
+						data-background-video-loop data-background-size="cover">
+					
+					<div class="fragment fade-out">
+						<img data-src="img/SocTitle.jpg" style="opacity: 1.00" height="50%" width="50%">
+					</div>
+				</section>
+
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>AttendeeService Class</h4>
+					<style type="text/css">
+						.gist {width:100% !important;}
+						.gist-file
+						.gist-data {max-height: 500px;max-width: 100%;}
+					</style>
+					<script src="https://gist.github.com/forcementor/fe627a9c5a08791cf02a6d2143edc7c3.js"></script>
+				</section>
+
+				<section data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Called From a Component Controller</h4>
+					<pre><code class="hljs" >
+	@AuraEnabled
+	public static Attendee saveAttendee(String attendeeJSON) {
+		
+		Attendee att = AttendeeService.saveAttendee(attendeeJSON);
+		
+		return getAttendee(att.recordId);
+	}
+					</code></pre>
+				</section>
+
+				<section data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Called From a Visualforce Controller</h4>
+					<pre><code class="hljs" >
+	public PageReference saveRegistrations() {
+		
+	AttendeeService.saveAttendee(this.attendee);
+
+	PageReference pr = 
+			new PageReference('/' + this.attendee.recordId);
+
+	pr.setRedirect(true);
+		
+	return pr;
+	}
+					</code></pre>
+				</section>
+		
+				<section data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Called From a Trigger</h4>
+					<pre><code class="hljs" >
+	trigger SessionRegistration 
+			on Session_Registration__c (before insert) {
+		
+	AttendeeService.validateSessionRegistration(trigger.new);
+
+	}
+					</code></pre>
+				</section>
+		
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>What are <br/>Service Layer benefits?</h4>
+					<h8 class="fragment fade-in-then-semi-out">Decouples complexity</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Allows reuse from multiple entry points</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Encapsulates concern logic</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Organizes where business logic resides</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Supports SFDX modular development</h8><br/>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>When is a Service Layer <br/>worth the effort?</h4>
+					<h8 class="fragment fade-in-then-semi-out">Evolving requirements</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Growing scope of your org</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Expanding or distributed team </h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Multiple execution context clients</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Building a product</h8><br/>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>What are <br/>Service Layer guidelines?</h4>
+					<h8 class="fragment fade-in-then-semi-out">Must be caller agnostic</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Must follow bulkification and limits guidelines</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Must be maintained to avoid 'Leaks'</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Should follow strict naming conventions</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Should handle Unit of Work for DML transactions</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">May be synchronous or asynchronous</h8><br/>
+				</section>
+				
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>What about <br/>non-Apex <br/>services?</h3>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>When you can't do what<br/>
+						you need in Apex...
+					</h4>
+					<h4 class="fragment fade-in">
+						implement your logic<br/> 
+						as a <i>microservice</i>...
+					</h4>
+					<h4 class="fragment fade-in">
+						and host it <br/>
+						somewhere else<br/>
+					</h4>
+					<h4 class="fragment fade-in">
+						(Heroku, AWS, Azure, etc.) 
+					</h4>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>microservice</h3>
+					<h6><i>noun</i></h6> 
+					<p><i>A loosely coupled, fine-grained <br/>and lightweight web service</i></p>
+				</section>				
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Microservice Use Case</h4>
+					<img src="img/microservice_use_case.png"  style="border:none;" height="95%" width="75%"/>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<img src="img/remittance_process_seq.jpg"  style="border:none;" height="95%" width="95%"/>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Async Call Out</h4>
+					<img src="img/microservice_use_case_async.png"  style="border:none;" height="95%" width="95%"/>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Mitigate with Mono-Purpose Microservices</h4>
+					<img data-src="img/DonAsMoses.jpg" style="opacity: 1.00" >
+				</section>
+				
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Mitigate with Mono-Purpose Microservices</h4>
+					<img data-src="img/moses1.jpg" width="853" height="439" style="opacity: 1.00" >
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Mitigate with Mono-Purpose Microservices</h4>
+					<iframe width="853" height="480" src="https://www.youtube.com/embed/O-Ohni7wEKA?start=1212&mute=1" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>Hungry for more?</h3>
+				</section>
+
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Understanding Apex Enterprise Patterns and Separation of Concerns in Salesforce</h4>
+					<h8>with Peter Tempfli</h8><br/>
+					<a href="https://pluralsight.pxf.io/C0030" target="_none"> 
+						<img src="img/peter.jpg" style="border:none;" width="60%" />
+					</a>	
+				</section>
+	
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Maximize Your Value Through <br/>Salesforce Coding Best Practices</h4>
+					<h8>with Matt Kaufman</h2>
+					<br/>	
+					<a href="https://pluralsight.pxf.io/C0023" target="_none"> 											
+						<img src="img/matt.jpg" style="border:none;" width="60%" />
+					</a>
+				</section>
+	
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Adopting Trigger Design Patterns <br/>in Existing Salesforce Orgs</h4>
+					<h8>with Dan Appleman</h2><br/>
+					<a href="https://pluralsight.pxf.io/C0031" target="_none"> 						
+						<img src="img/dan.jpg" style="border:none;" width="60%" />
+					</a>							
+				</section>
+
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Automated Code Analysis in<br/>Salesforce - a Tools Deep Dive</h4>
+					<h8>with Lorenzon Frattini and Robert Sösemann</h2><br/>
+					<a href="https://pluralsight.pxf.io/C0028" target="_none"> 						
+						<img src="img/LorenzoRobert.jpg" style="border:none;" width="60%" />
+					</a>							
+				</section>
+
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Getting on the Bus - Event Based Architecture with Salesforce Platform Events</h4>
+					<h8>with Simon Goodyear</h2>
+					<br/>	
+					<a href="https://pluralsight.pxf.io/C0029" target="_none"> 						
+						<img src="img/simon.jpg" style="border:none;" width="60%" />
+					</a>							
+				</section>
+	
+				<section  data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Follow the Salesforce Play By Play<br/>
+						series on Pluralsight and Youtube<br/>
+					</h4>
+					<a href="https://pluralsight.pxf.io/C0032" target="_none">
+						<img src="img/AuthorPage.jpg" style="border:none;" height="45%" width="45%" align="center" />
+					</a>
+					&nbsp;&nbsp;
+					<a href="http://bit.ly/sfplaybyplaylist" target="_none">
+						<img src="img/playbyplay-list.jpg" style="border:none;" height="40%" width="40%" align="center" />
+					</a>
+				</section>
+
+				<section data-transition="slide-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Subscribe for a 30 Day<br/>
+						Unlimited Access Code<br/>
+						to Pluralsight.com
+					</h4>
+					<a href="https://sfplaybyplay.secure.force.com" target="_none">
+						<img src="img/qr-sfplaybyplay.png"  style="border:none;" height="45%" width="45%" align="center" />
+					</a>		
+					&nbsp;&nbsp;
+					<a href="https://sfplaybyplay.secure.force.com" target="_none">					
+						<img src="img/30DayForm.jpg"  style="border:none;" height="35%" width="35%" align="center" />
+					</a>		
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>
+							“You must be imaginative, strong-hearted.<br/>
+							You must try things that may not work, and<br/>
+							you must not let anyone define your limits<br/>
+							because of where you come from. Your only<br/>
+							limit is your soul..."<br>
+					</h4>		
+					<h4 class="fragment fade-in">
+						—Chef Auguste Gusteau, Ratatouille
+					</h4>
+					<h4 class="fragment fade-in">
+							"What I say is true —anyone can cook-<br/>
+							but only the <u>fearless</u> can be great.”<br/><br/>
+					</h4>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Remmy was the little rat who<br/>
+						wanted to be a great chef and<br/>
+						prove that "Anyone can Cook!"
+					</h4>
+					<img data-src="img/remmycook.jpg" style="border:none;" >
+					<div style="font-size: 15px;"><i>"Ratatouille" &#9400; 2007 - courtesy of Pixar and Walt Disney Pictures</i></div>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h4>Anyone can <u>code</u> but<br/>
+						only the fearless who:
+						<p/>
+						<i>Embrace Modular Development<br/>
+						Adopt Clean Coding Practices<br/>
+						Avoid Anti-Patterns</i>
+						<p/>
+						can be great...
+					</h4>			
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>So which kind of<br/>
+						coder are you?</h3>
+					<img src="img/mongopiano.gif" style="border:none;"/>	
+					<h4>Mongo</h4>
+					<p>	
+					Thoughtless, smelly, dirty...
+					</p>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/ForcelandiaLogoUpperRight.jpg">
+					<h3>So which kind of<br/>
+						coder are you?</h3>
+					<img src="img/remmy.jpg"  style="border:none;" height="50%" width="50%"/>
+					<h4>Remmy</h4>
+					<p>
+						Fearless, innovative, clean...
+					</p>
+				</section>
+
+				<section style="text-align: left;" data-background-image="img/ForcelandiaHalfPage.png" data-transition="slow">
+					<br/><br/><br/><br/>
+					<div align="center" style="font-size: 86px; color:Black">Q and A</div>
+				</section>	
+
+				<section style="text-align: left;" data-background-image="img/ForcelandiaBackground.jpg" data-transition="slow">
+					<h4 style="color:Black">Next Steps:</h4>
+					<ul style="color:Black">
+						<li>Visit our sponsors!</li>
+						<li>Follow me @donrobins and on Pluralsight.com</li>
+						<li>Keep on learning and share with your Ohana</li>
+					</ul>
+					<br/>
+					<p style="color:Black">
+						This presentation is on Github here:
+						<img src="img/forcelandia19qr.png"  style="border:none;" height="25%" width="25%" align="right" />
+					</p>
+					<h4 style="color:Black">Thanks!</h4>
+					<div style="font-size: 25px;">
+						<a href="https://forcementor.github.io/forcelandia19emd">
+							<i>https://forcementor.github.io/forcelandia19emd</i>
+						</a>	
+					</div>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: 'c/t',
+				autoPlayMedia: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/chalkboard/chalkboard.js' },
+				],
+
+				chalkboard: { 
+					// optionally load pre-recorded chalkboard drawing from file
+					//src: "chalkboard.json",
+				},
+
+				keyboard: {
+					67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+					66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+					46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+					 8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+					68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+				},
+
+			});
+
+		</script>
+
+	</body>
+</html>
