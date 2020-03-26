@@ -213,12 +213,11 @@
 
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h3>How Does It Work in HTML?</h3>
-					<h8 class="fragment fade-in-then-semi-out">It's a UI messaging system</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">DOM based Event Driven programming</h8><br/>
 					<h8 class="fragment fade-in-then-semi-out">Movable Elements set as "Draggable"</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">Container Elements get Listeners</h8><br/>										
-					<h8 class="fragment fade-in-then-semi-out">Event Listeners bind to JavaScript handlers</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">JavaScript handlers manipulate the DOM and data</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Container Elements set with Listeners</h8><br/>										
+					<h8 class="fragment fade-in-then-semi-out">Event Listeners bind to JavaScript Handlers</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Handlers set DTO Payload and Drop Effects</h8><br/>					
+					<h8 class="fragment fade-in-then-semi-out">Handlers manipulate the DOM and Data</h8><br/>
 				</section>
 			
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
@@ -241,7 +240,7 @@
 									<h4><u>Target Container</u></h4>
 								 	<h8><p><i>a container element<br/>
 										the selected element can<br/>
-										be dragged over and<br/>
+										be dragged over and/or<br/>
 										dropped into<br/>
 										(ie. Div, List, etc.)
 									</i>
@@ -439,6 +438,45 @@
 						components look like?</h3> 
 				</section>
 
+				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+					<h4>Two Architectural Approaches</h4>
+					<table width="100%">
+						<tr>
+							<td width="50%">
+								<div class="fragment fade-in-then-semi-out">
+									<h4><u>Tightly Coupled</u></h4>
+									<h8><p><i>components can<br/>
+										be dragged to and from<br/>
+										source and target container<br/>
+										components										
+									</i></p></h8>
+								</div>
+							</td>
+							<td width="50%">
+								<div class="fragment fade-in-then-semi-out">
+									<h4><u>Loosely Coupled</u></h4>
+								 	<h8><p><i>container components<br/>
+										added to a Flexipage<br/>
+										by an App Builder and<br/>
+										communicate with PubSub<br/>
+									</i>
+									</p></h8>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</section>		
+
+				<section data-transition="slide-in fade-out" >
+					<h4>Tightly Coupled Components</h4> 
+					<img src="img/CasePicker2.png" />	
+				</section>
+
+				<section data-transition="slide-in fade-out" >
+					<h4>Loosley Coupled Components</h4> 
+					<img src="img/CasePicker3.png" width="80%"/>	
+				</section>
+
 				<!-- DRAGGABLE COMPONENT -->
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4>Draggable Component: Markup<br/>
@@ -479,7 +517,6 @@
 					<img src="img/case-list-CSS.png" />
 				</section>
 
-
 				<!-- MASTER COMPONENT -->
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4>Master Component: Markup<br/>
@@ -494,43 +531,8 @@
 					<img src="img/case-picker-JS-header.png" width="60%" />
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
-					<h4>Two Architectural Approaches</h4>
-					<table width="100%">
-						<tr>
-							<td width="50%">
-								<div class="fragment fade-in-then-semi-out">
-									<h4><u>Tightly Coupled</u></h4>
-									<h8><p><i>components can<br/>
-										be dragged to and from<br/>
-										source and target container<br/>
-										components										
-									</i></p></h8>
-								</div>
-							</td>
-							<td width="50%">
-								<div class="fragment fade-in-then-semi-out">
-									<h4><u>Loosely Coupled</u></h4>
-								 	<h8><p><i>container components<br/>
-										added to a Flexipage<br/>
-										by an App Builder and<br/>
-										communicate with PubSub<br/>
-									</i>
-									</p></h8>
-								</div>
-							</td>
-						</tr>
-					</table>
-				</section>		
-
 				<section data-transition="slide-in fade-out" >
-					<h4>Dissection 2 - Tightly Coupled LWCs</h4> 
-					<img src="img/CasePicker2.png" />	
-				</section>
-
-				<section data-transition="slide-in fade-out" >
-					<h4>Dissection 3 - Loosley Coupled LWCs</h4> 
-					<img src="img/CasePicker3.png" />	
+					<h3>Let's Dissect!</h3> 
 				</section>
 
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
