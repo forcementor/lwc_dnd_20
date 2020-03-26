@@ -420,33 +420,81 @@
 
 				<section data-transition="slide-in fade-out" >
 					<h3>How do you implement<br/>
-						HTML Drag and Drop in LWCs
+						HTML Drag and Drop in<br/>
+						Lightning Web Components
 					</h3> 
 				</section>
 
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4>LWC Drag and Drop Differences</h4>
-					<h8 class="fragment fade-in-then-semi-out">Take a Hybrid Approach</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">Custom Event Messaging Payload</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">Encapsulated Component Styling</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Requires a Hybrid Approach</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Uses a Custom Event Messaging Payload</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out"><i>(Abandons event DTO and Drop Effects)</i></h8><br/>					
+					<h8 class="fragment fade-in-then-semi-out">Encapsulates Component Styling</h8><br/>
 					<h8 class="fragment fade-in-then-semi-out">Facilitates Data Manipulation</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">Data Driven Reactive Rendering</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">Supports Tight and Loose Coupling</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Uses Data Driven Reactive Rendering</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out"><i>(Avoids standard DOM Manipulation!)</i></h8><br/>
 				</section>
-
-
 
 				<section data-transition="slide-in fade-out" >
-					<h4>What does it look like? (CODE HERE)</h4> 
-					<img src="img/.png" />	
+					<h3>What do the<br/>
+						components look like?</h3> 
+				</section>
+
+				<!-- DRAGGABLE COMPONENT -->
+				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+					<h4>Draggable Component: Markup<br/>
+						(caseItem.html)</h4> 
+					</h4> 
+					<img src="img/case-item-HTML.png" />
+				</section>
+				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+					<h4>Draggable Component: Module<br/>
+						(caseItem.js)</h4> 
+					</h4> 
+					<img src="img/case-item-JS-dragstart.png" width="80%" />
+				</section>
+				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+					<h4>Draggable Component: Style<br/>
+						(caseItem.css)</h4> 
+					</h4> 
+					<img src="img/case-item-CSS.png" />
+				</section>
+
+				<!-- CONTAINER COMPONENT -->
+				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+					<h4>Container Component: Markup<br/>
+						(caseList.html)</h4> 
+					</h4> 
+					<img src="img/case-list-HTML.png"  width="60%"/>
+				</section>
+				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+					<h4>Container Component: Module<br/>
+						(caseList.js)</h4> 
+					</h4> 
+					<img src="img/case-list-JS-drop.png" width="80%" />
+				</section>
+				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+					<h4>Container Component: Style<br/>
+						(caseList.css)</h4> 
+					</h4> 
+					<img src="img/case-list-CSS.png" />
 				</section>
 
 
-
-
-
-
-
+				<!-- MASTER COMPONENT -->
+				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+					<h4>Master Component: Markup<br/>
+						(casePicker.html)</h4> 
+					</h4> 
+					<img src="img/case-picker-HTML.png"  width="60%"/>
+				</section>
+				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+					<h4>Master Component: Module<br/>
+						(casePicker.js)</h4> 
+					</h4> 
+					<img src="img/case-picker-JS-header.png" width="60%" />
+				</section>
 
 
 
@@ -541,7 +589,14 @@
 				</section>
 				<section data-transition="fade-in fade-out">
 					<a href="https://www.sfplaybyplay.com" target="_none"> 						
-						<img src="img/PbPTiles3.png" width="60%"/>
+						<img src="img/PbPTiles.png" width="60%"/>
+					</a>
+					<br/>							
+					<h4>www.sfplaybyplaycom</h4>
+				</section>
+				<section data-transition="fade-in fade-out">
+					<a href="https://www.sfplaybyplay.com" target="_none"> 						
+						<img src="img/PbPTilesCallout.png" width="60%"/>
 					</a>
 					<br/>							
 					<h4>www.sfplaybyplaycom</h4>
