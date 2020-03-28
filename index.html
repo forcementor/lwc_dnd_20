@@ -208,6 +208,7 @@
 					<h8 class="fragment fade-in-then-semi-out">Event Listeners bind to JavaScript Handlers</h8><br/>
 					<h8 class="fragment fade-in-then-semi-out">Handlers set DTO Payload and Drop Effects</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Handlers manipulate the DOM and Data</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Only some handlers are required</h8><br/>
 				</section>
 			
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
@@ -271,7 +272,7 @@
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Draggable Element)</i></h4>
 					<h3>The Drag Start event</h3>
-					<h8 class="fragment fade-in-then-semi-out">You must handle this event</h8><br/>					
+					<h8 class="fragment fade-in-then-semi-out">Handling this event is REQUIRED</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Captures the element Id of the Dragged Element</h8><br/>
 					<h8 class="fragment fade-in-then-semi-out">Captures the element Id of the Source Container</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Loads the Data and Drop Effects in the Event DTO</h8><br/>					
@@ -281,47 +282,47 @@
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Draggable Element)</i></h4>
 					<h3>The Drag event</h3>
-					<h8 class="fragment fade-in-then-semi-out">Handling this event is optional</h8><br/>					
+					<h8 class="fragment fade-in-then-semi-out">Handling this event is OPTIONAL</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Typically used to affect the CSS presentation</h8><br/>									
 				</section>
 
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Draggable Element)</i></h4>
 					<h3>The Drag End event</h3>
-					<h8 class="fragment fade-in-then-semi-out">Handling this event is optional</h8><br/>					
+					<h8 class="fragment fade-in-then-semi-out">Handling this event is OPTIONAL</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Typically used to reset the CSS presentation</h8><br/>									
 				</section>
 
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Target Container)</i></h4>
 					<h3>The Drag Enter event</h3>
-					<h8 class="fragment fade-in-then-semi-out">You MUST handle this event</h8><br/>					
-					<h8 class="fragment fade-in-then-semi-out">You MUST short-stop default behavior</h8><br/>									
+					<h8 class="fragment fade-in-then-semi-out">Handling this event is REQUIRED</h8><br/>					
+					<h8 class="fragment fade-in-then-semi-out">The handler MUST call preventDefault()</h8><br/>									
 					<h8 class="fragment fade-in-then-semi-out">Typically used to reset the CSS presentation</h8><br/>									
 				</section>
 
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Target Container)</i></h4>
 					<h3>The Drag Over event</h3>
-					<h8 class="fragment fade-in-then-semi-out">You MUST handle this event</h8><br/>					
-					<h8 class="fragment fade-in-then-semi-out">You SHOULD short-stop default behavior</h8><br/>									
+					<h8 class="fragment fade-in-then-semi-out">Handling this event is REQUIRED</h8><br/>					
+					<h8 class="fragment fade-in-then-semi-out">The handler SHOULD call preventDefault()</h8><br/>									
 					<h8 class="fragment fade-in-then-semi-out">Typically used to reset the CSS presentation</h8><br/>									
 				</section>
 
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Target Container)</i></h4>
 					<h3>The Drag Leave event</h3>
-					<h8 class="fragment fade-in-then-semi-out">Handling this event is optional</h8><br/>					
+					<h8 class="fragment fade-in-then-semi-out">Handling this event is OPTIONAL</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Typically used to reset the CSS presentation</h8><br/>									
 				</section>
 
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Target Container)</i></h4>
 					<h3>The Drop event</h3>
-					<h8 class="fragment fade-in-then-semi-out">You MUST handle this event</h8><br/>					
-					<h8 class="fragment fade-in-then-semi-out">You SHOULD short-stop default behavior and bubbling</h8><br/>									
+					<h8 class="fragment fade-in-then-semi-out">Handling this event is REQUIRED</h8><br/>					
+					<h8 class="fragment fade-in-then-semi-out">The handler SHOULD call preventDefault()</h8><br/>									
 					<h8 class="fragment fade-in-then-semi-out">Processes DOM changes to the Dragged element</h8><br/>									
-					<h8 class="fragment fade-in-then-semi-out">Processes any required data</h8><br/>									
+					<h8 class="fragment fade-in-then-semi-out">Processes any required data or logic</h8><br/>									
 					<h8 class="fragment fade-in-then-semi-out">Typically used to reset the CSS presentation</h8><br/>									
 				</section>
 
@@ -361,6 +362,11 @@
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4>Setting Up The Event Listeners</h4> 
 					<img height="75%" width="75%" src="img/htmlHandlerJSCallout.png" />	
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+					<h4>DragStart Event Handler</h4> 
+					<img height="75%" width="75%" src="img/htmlDragStartJS.png" />	
 				</section>
 
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
