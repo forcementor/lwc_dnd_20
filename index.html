@@ -208,7 +208,7 @@
 					<h8 class="fragment fade-in-then-semi-out">Event Listeners bind to JavaScript Handlers</h8><br/>
 					<h8 class="fragment fade-in-then-semi-out">Handlers set DTO Payload and Drop Effects</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Handlers manipulate the DOM and Data</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">Only some handlers are required</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">Only some Handlers are required</h8><br/>
 				</section>
 			
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
@@ -346,12 +346,12 @@
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4>Implemening Standard HTML <br/>
 						Drag and Drop in Visualforce</h4> 
-					<img src="img/CasePicker1.png" />	
+					<img src="img/CasePicker1.png" width="60%" />	
 				</section>
 
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4>HTML Multiple Containers</h4> 
-					<img src="img/htmlDivs.png" width="70%"/>
+					<img src="img/htmlDivs.png" width="60%"/>
 					</br>
 					<h8>Declare collection of Div Containers</h8>
 				</section>
@@ -360,7 +360,7 @@
 					<h4>Draggable Element<br/>
 						(in the 'New' source container)		
 					</h4> 
-					<img src="img/html1callout.png" />
+					<img src="img/html1callout.png" width="40%" />
 					</br>
 					<h8>Set Source Container and Draggable Item</h8>
 				</section>
@@ -368,7 +368,7 @@
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4>Potential Drop Target Container<br/>
 						(the 'Working' container)</h4> 
-					<img src="img/html2callout.png" />	
+					<img src="img/html2callout.png" width="60%" />	
 					</br>
 					<h8>Set Container as Drop Target</h8>
 				</section>
@@ -376,14 +376,14 @@
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4>Potential Drop Target Container<br/>
 						(the 'Escalated' container)</h4> 
-					<img src="img/html3callout.png" />	
+					<img src="img/html3callout.png" width="60%" />	
 					</br>
 					<h8>Set another Container as Drop Target</h8>
 				</section>
 
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4>Setting Up The Event Listeners</h4> 
-					<img height="75%" width="75%" src="img/htmlHandlerJSCallout.png" />	
+					<img src="img/htmlHandlerJSCallout.png" width="60%" />	
 					</br>
 					<h8>Use selectors to fetch elements and add Listeners</h8>
 				</section>
@@ -397,7 +397,7 @@
 
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4>Drop Event Handler</h4> 
-					<img height="75%" width="75%" src="img/htmlDropJSCallout.png" />	
+					<img src="img/htmlDropJSCallout.png" width="60%" />	
 					</br>
 					<h8>Fetch Item Id and reparent to Target Container</h8>
 				</section>
@@ -428,18 +428,23 @@
 					<h3>Key Points</h3>
 					<i>
 						<p class="fragment fade-in-then-semi-out">
-							LWCs leverage Drag and Drop events<br/>
-							and broker with Custom Events.
+							LWCs declare and handle Drag and Drop<br/>
+							events and broker them with Custom Events.
 						</p>
 						<p class="fragment fade-in-then-semi-out">
-							These messages travel up a component<br/>
-							hierarchy to a top level master component.
+							These messages travel up the Component<br/>
+							Hierarchy to a top level Master Component.
 						</p>
 						<p class="fragment fade-in-then-semi-out">
-							It manages all data fetches and updates,<br/>
-							which trigger reactive rerendering back<br/>
-							down through the hierarchy.
+							The Master Component fetches and updates<br/>
+							all data bound to tracked properties.
 						</p>
+						<p class="fragment fade-in-then-semi-out">
+							Changes to tracked properties trigger<br/>
+							reactive rerendering back down through<br/>
+							the component hierarchy refreshing the UI.
+						</p>
+
 					</i>	
 				</section>
 
@@ -503,7 +508,7 @@
 					<h4>Draggable Component: Module<br/>
 						(caseItem.js)</h4> 
 					</h4> 
-					<img src="img/case-item-JS-dragstartCallout.png"  draggable="false" width="70%" />
+					<img src="img/case-item-JS-dragstartCallout.png"  draggable="false" width="60%" />
 					</br>
 					<h8>Set Drag style and broker the Drag event</h8>
 				</section>
@@ -531,7 +536,7 @@
 					<h4>Container Component: Module<br/>
 						(caseList.js)</h4> 
 					</h4> 
-					<img src="img/case-list-js-OverLeaveCallout.png" width="70%" />
+					<img src="img/case-list-js-OverLeaveCallout.png" width="60%" />
 					</br>
 					<h8>Handle events that change Container style</h8>
 				</section>
@@ -568,7 +573,7 @@
 					<h4>Master Component: Markup<br/>
 						(casePicker.html)</h4> 
 					</h4> 
-					<img src="img/case-picker-HTMLCallout.png"  width="80%"/>
+					<img src="img/case-picker-HTMLCallout.png"  width="70%"/>
 					</br>
 					<h8>Wire the Container events to the Master</h8>
 				</section>
@@ -576,7 +581,7 @@
 					<h4>Master Component: Module<br/>
 						(casePicker.js)</h4> 
 					</h4> 
-					<img src="img/case-picker-JS-header.png" width="70%" />
+					<img src="img/case-picker-JS-header.png" width="60%" />
 					</br>
 					<h8>Declare Apex and RecordUI imports and lists</h8>
 				</section>
@@ -584,7 +589,7 @@
 					<h4>Master Component: Module<br/>
 						(casePicker.js)</h4> 
 					</h4> 
-					<img src="img/case-picker-JS-datawire.png" width="70%" />
+					<img src="img/case-picker-JS-datawire.png" width="60%" />
 					</br>
 					<h8>Use @wire to fetch and filter data lists</h8>
 				</section>
@@ -592,7 +597,7 @@
 					<h4>Master Component: Module<br/>
 						(casePicker.js)</h4> 
 					</h4> 
-					<img src="img/case-picker-JS-update.png" width="70%" />
+					<img src="img/case-picker-JS-update.png" width="60%" />
 					</br>
 					<h8>Validate, Update and Refresh data on Drop</h8>
 			</section>
