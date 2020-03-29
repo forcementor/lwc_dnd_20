@@ -219,7 +219,7 @@
 								<div class="fragment fade-in-then-semi-out">
 									<h4><u>Draggable Element</u></h4>
 									<h8><p><i>the selected element<br/>
-										being dragged from<br/>
+										being Dragged from<br/>
 										a source container<br/>
 										to a target container<br/>										
 										(ie. URL, Image, etc.)
@@ -231,8 +231,8 @@
 									<h4><u>Target Container</u></h4>
 								 	<h8><p><i>a container element<br/>
 										the selected element can<br/>
-										be dragged over and/or<br/>
-										dropped into<br/>
+										be Dragged over and/or<br/>
+										Dropped into<br/>
 										(ie. Div, List, etc.)
 									</i>
 									</p></h8>
@@ -249,7 +249,7 @@
 							<td width="50%">
 								<div class="fragment fade-in">
 									<h4><u>Draggable Element</u></h4>
-									<h8 class="fragment fade-in-then-semi-out">DragStart</h8><br/>
+									<h8 class="fragment fade-in-then-semi-out">DragStart*</h8><br/>
 									<h8 class="fragment fade-in-then-semi-out">Drag</h8><br/>																		
 									<h8 class="fragment fade-in-then-semi-out">DragEnd</h8><br/>									
 								</div>
@@ -257,10 +257,10 @@
 							<td width="50%">
 								<div class="fragment fade-in">
 									<h4><u>Target Container</u></h4>
-									<h8 class="fragment fade-in-then-semi-out">DragEnter</h8><br/>
-									<h8 class="fragment fade-in-then-semi-out">DragOver</h8><br/>									
+									<h8 class="fragment fade-in-then-semi-out">DragEnter*</h8><br/>
+									<h8 class="fragment fade-in-then-semi-out">DragOver*</h8><br/>									
 									<h8 class="fragment fade-in-then-semi-out">DragLeave</h8><br/>																		
-									<h8 class="fragment fade-in-then-semi-out">Drop</h8><br/>																		
+									<h8 class="fragment fade-in-then-semi-out">Drop*</h8><br/>																		
 								</div>
 							</td>
 						</tr>
@@ -271,8 +271,8 @@
 
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Draggable Element)</i></h4>
-					<h3>The DragStart event</h3>
-					<h8 class="fragment fade-in-then-semi-out">Fires when an element is first dragged</h8><br/>					
+					<h3>The DragStart* event</h3>
+					<h8 class="fragment fade-in-then-semi-out">Fires when an element is first Dragged</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Handling this event is REQUIRED</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Captures the element Id of the Dragged Element</h8><br/>
 					<h8 class="fragment fade-in-then-semi-out">Captures the element Id of the Source Container</h8><br/>					
@@ -283,7 +283,8 @@
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Draggable Element)</i></h4>
 					<h3>The Drag event</h3>
-					<h8 class="fragment fade-in-then-semi-out">Fires as an element is being dragged</h8><br/>					
+					<h8 class="fragment fade-in-then-semi-out">Fires as an element is being Dragged</h8><br/>					
+					<h8 class="fragment fade-in-then-semi-out">Continues to fire every few hundred milliseconds</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Handling this event is OPTIONAL</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Typically used to affect the CSS presentation</h8><br/>									
 				</section>
@@ -291,15 +292,15 @@
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Draggable Element)</i></h4>
 					<h3>The DragEnd event</h3>
-					<h8 class="fragment fade-in-then-semi-out">Fires as a drag operation ends</h8><br/>					
+					<h8 class="fragment fade-in-then-semi-out">Fires as a Drag operation ends</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Handling this event is OPTIONAL</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Typically used to reset the CSS presentation</h8><br/>									
 				</section>
 
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Target Container)</i></h4>
-					<h3>The DragEnter event</h3>
-					<h8 class="fragment fade-in-then-semi-out">Fires as item enters a valid drop target</h8><br/>					
+					<h3>The DragEnter* event</h3>
+					<h8 class="fragment fade-in-then-semi-out">Fires as item enters a valid Drop  target</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Handling this event is REQUIRED</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">The handler MUST call preventDefault()</h8><br/>									
 					<h8 class="fragment fade-in-then-semi-out">Typically used to reset the CSS presentation</h8><br/>									
@@ -307,8 +308,9 @@
 
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Target Container)</i></h4>
-					<h3>The DragOver event</h3>
-					<h8 class="fragment fade-in-then-semi-out">Fires as item is being dragged over a valid drop target</h8><br/>					
+					<h3>The DragOver* event</h3>
+					<h8 class="fragment fade-in-then-semi-out">Fires as item is Dragged over valid Drop target</h8><br/>					
+					<h8 class="fragment fade-in-then-semi-out">Continues to fire every few hundred milliseconds</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Handling this event is REQUIRED</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">The handler SHOULD call preventDefault()</h8><br/>									
 					<h8 class="fragment fade-in-then-semi-out">Typically used to reset the CSS presentation</h8><br/>									
@@ -317,15 +319,15 @@
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Target Container)</i></h4>
 					<h3>The DragLeave event</h3>
-					<h8 class="fragment fade-in-then-semi-out">Fires as item leaves a valid drop target</h8><br/>					
+					<h8 class="fragment fade-in-then-semi-out">Fires as item leaves a valid Drop target</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Handling this event is OPTIONAL</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Typically used to reset the CSS presentation</h8><br/>									
 				</section>
 
 				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4><i>(Target Container)</i></h4>
-					<h3>The Drop event</h3>
-					<h8 class="fragment fade-in-then-semi-out">Fires as item is dropped on a valid drop target</h8><br/>					
+					<h3>The Drop* event</h3>
+					<h8 class="fragment fade-in-then-semi-out">Fires as item is dropped on a valid Drop target</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Handling this event is REQUIRED</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">The handler SHOULD call preventDefault()</h8><br/>									
 					<h8 class="fragment fade-in-then-semi-out">Processes DOM changes to the Dragged element</h8><br/>									
@@ -350,6 +352,8 @@
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4>HTML Multiple Containers</h4> 
 					<img src="img/htmlDivs.png" width="70%"/>
+					</br>
+					<h8>Declare collection of Div Containers</h8>
 				</section>
 
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
@@ -357,33 +361,45 @@
 						(in the 'New' source container)		
 					</h4> 
 					<img src="img/html1callout.png" />
+					</br>
+					<h8>Set Source Container and Draggable Item</h8>
 				</section>
 
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4>Potential Drop Target Container<br/>
 						(the 'Working' container)</h4> 
 					<img src="img/html2callout.png" />	
+					</br>
+					<h8>Set Container as Drop Target</h8>
 				</section>
 
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4>Potential Drop Target Container<br/>
 						(the 'Escalated' container)</h4> 
 					<img src="img/html3callout.png" />	
+					</br>
+					<h8>Set another Container as Drop Target</h8>
 				</section>
 
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4>Setting Up The Event Listeners</h4> 
 					<img height="75%" width="75%" src="img/htmlHandlerJSCallout.png" />	
+					</br>
+					<h8>Use selectors to fetch elements and add Listeners</h8>
 				</section>
 
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4>DragStart Event Handler</h4> 
 					<img height="75%" width="75%" src="img/htmlDragStartJS.png" />	
+					</br>
+					<h8>Capture Item and Container Ids</h8>
 				</section>
 
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4>Drop Event Handler</h4> 
 					<img height="75%" width="75%" src="img/htmlDropJSCallout.png" />	
+					</br>
+					<h8>Fetch Item Id and reparent to Target Container</h8>
 				</section>
 
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
@@ -473,15 +489,7 @@
 					</h4> 
 					<img src="img/case-item-HTMLCallout.png" draggable="false" width="50%"/>
 					</br>
-					<h8>Set Item Draggable and wire its events</h8>
-				</section>
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
-					<h4>Draggable Component: Module<br/>
-						(caseItem.js)</h4> 
-					</h4> 
-					<img src="img/case-item-JS-dragstartCallout.png"  draggable="false" width="70%" />
-					</br>
-					<h8>DragStart Event Handler</h8>
+					<h8>Set Item as Draggable and wire its events</h8>
 				</section>
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4>Draggable Component: Style<br/>
@@ -489,7 +497,15 @@
 					</h4> 
 					<img src="img/case-item-CSSCallout.png" draggable="false" width="40%"/>
 					</br>
-					<h8>Define the Drag style</h8>
+					<h8>Define the Item Component's Drag style</h8>
+				</section>
+				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+					<h4>Draggable Component: Module<br/>
+						(caseItem.js)</h4> 
+					</h4> 
+					<img src="img/case-item-JS-dragstartCallout.png"  draggable="false" width="70%" />
+					</br>
+					<h8>Set Drag style and broker the Drag event</h8>
 				</section>
 
 				<!-- CONTAINER COMPONENT -->
@@ -497,9 +513,18 @@
 					<h4>Container Component: Markup<br/>
 						(caseList.html)</h4> 
 					</h4> 
-					<img src="img/case-list-HTMLCallout.png"  width="60%"/>
+					<img src="img/case-list-HTMLCallout.png" width="60%"/>
 					</br>
 					<h8>Wire up both Container and Item events</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+					<h4>Container Component: Style<br/>
+						(caseList.css)</h4> 
+					</h4> 
+					<img src="img/case-list-CSS.png" width="40%"/>
+					</br>
+					<h8>Define the Container's DragOver style</h8>
 				</section>
 
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
@@ -517,7 +542,7 @@
 					</h4> 
 					<img src="img/case-list-js-AddRemoveCallout.png" width="80%" />
 					</br>
-					<h8>Module helper functions for setting Style</h8>
+					<h8>Use helper functions to set and reset Styles</h8>
 				</section>
 
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
@@ -535,16 +560,7 @@
 					</h4> 
 					<img src="img/case-list-JS-dropCallout.png" width="80%" />
 					</br>
-					<h8>Raise the Container's Drop event</h8>
-				</section>
-
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
-					<h4>Container Component: Style<br/>
-						(caseList.css)</h4> 
-					</h4> 
-					<img src="img/case-list-CSS.png" />
-					</br>
-					<h8>Define the Container's DragOver style</h8>
+					<h8>Broker the Container's Drop event</h8>
 				</section>
 
 				<!-- MASTER COMPONENT -->
@@ -570,7 +586,7 @@
 					</h4> 
 					<img src="img/case-picker-JS-datawire.png" width="70%" />
 					</br>
-					<h8>The @wire function fetches and filters data</h8>
+					<h8>Use @wire to fetch and filter data lists</h8>
 				</section>
 				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
 					<h4>Master Component: Module<br/>
