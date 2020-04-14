@@ -53,6 +53,18 @@
 		</style>
 
 
+		<style>
+			#content {
+				position: relative;
+			}
+			#content img {
+				position: absolute;
+				top: 5px;
+				right: 60px;
+			}
+			
+		</style>
+
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
@@ -60,27 +72,31 @@
 
 	<body>
 
+		<div id="content">
+			<img src="img/whitelogo.png" height="75px" width="200px"/>
+		</div>
+
 		<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 			
-				<section data-background-size="contain" data-background-image="img/VD2020.png" data-transition="slow" >
+				<section data-background-size="contain" data-background-image="img/vds1.png" data-transition="slow" >
+				</section>
+
+				<section data-background-size="contain" data-background-image="img/vds2.png" data-transition="slow" >
+				</section>
+
+				<section data-background-size="contain" data-background-image="img/vds3.png" data-transition="slow" >
 				</section>
 
 				<!-- 
-				<section data-background-size="contain" data-background-image="img/2019Sponsors1.png" data-transition="slow" >
-				</section>
-				
-				<section data-background-size="contain" data-background-image="img/2019Sponsors2.png" data-transition="slow" >
+				<section data-transition="fade-in" data-transition="slow"  >
+					<h3>Exploring</br>Drag and Drop</br>with</br>Lightning Web Components</h3>
 				</section>
 				-->
 
-				<section data-transition="fade-in" data-transition="slow" data-background-image="img/VD2020LogoUpperRight.png" >
-					<h3>Exploring</br>Drag and Drop</br>with</br>Lightning Web Components</h3>
-				</section>
-
-				<section data-transition="slide" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="slide" >
 					<h3>Don Robins</h3>
 					<p/>
 					<h8>Technical Educator</h8><br/>
@@ -92,7 +108,7 @@
 					<h8>Pluralsight "Salesforce Play by Play" Producer</h8><br/>
 				</section>
 
-				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="slide-in fade-out" >
 					<h3>Topics</h3>
 					<p/>
 					<h8 class="fragment fade-in-then-semi-out">Drag and Drop Use Cases</h8><br/>
@@ -103,7 +119,7 @@
 					<h8 class="fragment fade-in-then-semi-out">Where to Learn More</h8><br/>										
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h3>We Will <u>Not</u> Dig Into</h3>
 					<h8 class="fragment fade-in-then-semi-out">Full Drag and Drop JavaScript API</h8><br/>
 					<h8 class="fragment fade-in-then-semi-out">Drag and Drop in Aura</h8><br/>
@@ -111,7 +127,7 @@
 					<h8 class="fragment fade-in-then-semi-out">Mobile and Gesture Based Drag and Drop</h8><br/>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h3>Get the Presentation link</h3>	
 					<img src="img/lwc_dnd_20qr.png"  style="border:none;" height="50%" width="50%" align="center" />
 					<div >
@@ -124,30 +140,30 @@
 				</section>
 
 				<!-- DRAG AND DROP USE CASES -->	
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h3>Salesforce Use Cases</h3>
 					<img src="img/dnd_kanban_sample.jpeg" /><br/>
 					<h8>Kanban</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h3>Salesforce Use Cases</h3>
 					<img src="img/dnd_map_sample.png" /><br/>
 					<h8>Mapping Locations</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h3>Salesforce Use Cases</h3>
 					<img src="img/dnd_files_sample.png" /><br/>
 					<h8>Uploading Files</h8>
 				</section>
 
 				<!-- WHAT IS DRAG AND DROP -->	
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h3>What is Drag and Drop?</h3>
 				</section>
 
-				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="slide-in fade-out" >
 					<h3>drag and drop</h3>
 					<h6><i>noun</i></h6> 
 					<p><i>a programmatic mechanism whereby a<br/>
@@ -162,7 +178,7 @@
 						 data-background-interactive >
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h3>Let's Break It Down</h3>
 					<h8 class="fragment fade-in-then-semi-out">User "Clicks" on a displayed element</h8><br/>
 					<h8 class="fragment fade-in-then-semi-out">User "Drags" it across the screen</h8><br/>
@@ -171,7 +187,7 @@
 					<h8 class="fragment fade-in-then-semi-out">Associated logic may affect data</h8><br/>															
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png"> 
+				<section data-transition="fade-in fade-out" > 
 					<table>
 						<tr>
 							<td>
@@ -201,7 +217,7 @@
 					</table>		
 				</section>	
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h3>How Does It Work in HTML?</h3>
 					<h8 class="fragment fade-in-then-semi-out">Movable Elements set as "Draggable"</h8><br/>
 					<h8 class="fragment fade-in-then-semi-out">Container Elements set with Listeners</h8><br/>										
@@ -211,7 +227,7 @@
 					<h8 class="fragment fade-in-then-semi-out">Only some Handlers are required</h8><br/>
 				</section>
 			
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h3>Two Types of HTML Elements</h3>
 					<table width="100%">
 						<tr>
@@ -242,7 +258,7 @@
 					</table>
 				</section>		
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h3>Each Type Has Its Own Events</h3>
 					<table width="100%">
 						<tr>
@@ -269,7 +285,7 @@
 					<h4 class="fragment fade-in"><i>There are often multiple Target Containers</i></h4>
 				</section>		
 
-				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="slide-in fade-out" >
 					<h4><i>(Draggable Element)</i></h4>
 					<h3>The DragStart* event</h3>
 					<h8 class="fragment fade-in-then-semi-out">Fires when an element is first Dragged</h8><br/>					
@@ -280,7 +296,7 @@
 					<h8 class="fragment fade-in-then-semi-out">Typically used to set the CSS presentation</h8><br/>									
 				</section>
 
-				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="slide-in fade-out" >
 					<h4><i>(Draggable Element)</i></h4>
 					<h3>The Drag event</h3>
 					<h8 class="fragment fade-in-then-semi-out">Fires as an element is being Dragged</h8><br/>					
@@ -289,7 +305,7 @@
 					<h8 class="fragment fade-in-then-semi-out">Typically used to affect the CSS presentation</h8><br/>									
 				</section>
 
-				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="slide-in fade-out" >
 					<h4><i>(Draggable Element)</i></h4>
 					<h3>The DragEnd event</h3>
 					<h8 class="fragment fade-in-then-semi-out">Fires as a Drag operation ends</h8><br/>					
@@ -297,7 +313,7 @@
 					<h8 class="fragment fade-in-then-semi-out">Typically used to reset the CSS presentation</h8><br/>									
 				</section>
 
-				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="slide-in fade-out" >
 					<h4><i>(Target Container)</i></h4>
 					<h3>The DragEnter* event</h3>
 					<h8 class="fragment fade-in-then-semi-out">Fires as item enters a valid Drop  target</h8><br/>					
@@ -306,7 +322,7 @@
 					<h8 class="fragment fade-in-then-semi-out">Typically used to reset the CSS presentation</h8><br/>									
 				</section>
 
-				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="slide-in fade-out" >
 					<h4><i>(Target Container)</i></h4>
 					<h3>The DragOver* event</h3>
 					<h8 class="fragment fade-in-then-semi-out">Fires as item is Dragged over valid Drop target</h8><br/>					
@@ -316,7 +332,7 @@
 					<h8 class="fragment fade-in-then-semi-out">Typically used to reset the CSS presentation</h8><br/>									
 				</section>
 
-				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="slide-in fade-out" >
 					<h4><i>(Target Container)</i></h4>
 					<h3>The DragLeave event</h3>
 					<h8 class="fragment fade-in-then-semi-out">Fires as item leaves a valid Drop target</h8><br/>					
@@ -324,7 +340,7 @@
 					<h8 class="fragment fade-in-then-semi-out">Typically used to reset the CSS presentation</h8><br/>									
 				</section>
 
-				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="slide-in fade-out" >
 					<h4><i>(Target Container)</i></h4>
 					<h3>The Drop* event</h3>
 					<h8 class="fragment fade-in-then-semi-out">Fires as item is dropped on a valid Drop target</h8><br/>					
@@ -336,27 +352,27 @@
 				</section>
 
 				<!-- SALESFORCE -->	
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h3>How do you implement<br/>
 						Standard HTML<br/>
 						Drag and Drop<br/>
 						in Salesforce?</h3>
 				</section>			
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Implemening Standard HTML <br/>
 						Drag and Drop in Visualforce</h4> 
 					<img src="img/CasePicker1.png" width="60%" />	
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>HTML Multiple Containers</h4> 
 					<img src="img/htmlDivs.png" width="60%"/>
 					</br>
 					<h8>Declare collection of Div Containers</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Draggable Element<br/>
 						(in the 'New' source container)		
 					</h4> 
@@ -365,7 +381,7 @@
 					<h8>Set Source Container and Draggable Item</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Potential Drop Target Container<br/>
 						(the 'Working' container)</h4> 
 					<img src="img/html2callout.png" width="60%" />	
@@ -373,7 +389,7 @@
 					<h8>Set Container as Drop Target</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Potential Drop Target Container<br/>
 						(the 'Escalated' container)</h4> 
 					<img src="img/html3callout.png" width="60%" />	
@@ -381,39 +397,39 @@
 					<h8>Set another Container as Drop Target</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Setting Up The Event Listeners</h4> 
 					<img src="img/htmlHandlerJSCallout.png" width="60%" />	
 					</br>
 					<h8>Use selectors to fetch elements and add Listeners</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>DragStart Event Handler</h4> 
 					<img height="75%" width="75%" src="img/htmlDragStartJS.png" />	
 					</br>
 					<h8>Capture Item and Container Ids</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Drop Event Handler</h4> 
 					<img src="img/htmlDropJSCallout.png" width="60%" />	
 					</br>
 					<h8>Fetch Item Id and reparent to Target Container</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h3>Demo Visualforce...</h3> 
 				</section>
 
-				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png" >
+				<section data-transition="slide-in fade-out"  >
 					<h3>How do you implement<br/>
 						HTML Drag and Drop in<br/>
 						Lightning Web Components
 					</h3> 
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>LWC vs Standard HTML Differences</h4>
 					<h8 class="fragment fade-in-then-semi-out">Both Manipulate the DOM but Differently...</h8><br/>
 					<h8 class="fragment fade-in-then-semi-out">Use LWC to broker the events</h8><br/>
@@ -424,7 +440,7 @@
 					<h8 class="fragment fade-in-then-semi-out"><i>(LWC avoids standard DOM Manipulation!)</i></h8><br/>
 				</section>
 
-				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="slide-in fade-out" >
 					<h3>Key Points</h3>
 					<i>
 						<p class="fragment fade-in-then-semi-out">
@@ -448,7 +464,7 @@
 					</i>	
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Two Architectural Approaches</h4>
 					<table width="100%">
 						<tr>
@@ -477,18 +493,18 @@
 					</table>
 				</section>		
 
-				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png" >
+				<section data-transition="slide-in fade-out"  >
 					<h4>Tightly Coupled Components</h4> 
 					<img src="img/CasePicker2.png" />	
 				</section>
 
-				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="slide-in fade-out" >
 					<h4>Loosley Coupled Components</h4> 
 					<img src="img/CasePicker3.png" width="80%"/>	
 				</section>
 
 				<!-- DRAGGABLE COMPONENT -->
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Draggable Component: Markup<br/>
 						(caseItem.html)</h4> 
 					</h4> 
@@ -496,7 +512,7 @@
 					</br>
 					<h8>Set Item as Draggable and wire its events</h8>
 				</section>
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Draggable Component: Style<br/>
 						(caseItem.css)</h4> 
 					</h4> 
@@ -504,7 +520,7 @@
 					</br>
 					<h8>Define the Item Component's Drag style</h8>
 				</section>
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Draggable Component: Module<br/>
 						(caseItem.js)</h4> 
 					</h4> 
@@ -514,7 +530,7 @@
 				</section>
 
 				<!-- CONTAINER COMPONENT -->
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Container Component: Markup<br/>
 						(caseList.html)</h4> 
 					</h4> 
@@ -523,7 +539,7 @@
 					<h8>Wire up both Container and Item events</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Container Component: Style<br/>
 						(caseList.css)</h4> 
 					</h4> 
@@ -532,7 +548,7 @@
 					<h8>Define the Container's DragOver style</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Container Component: Module<br/>
 						(caseList.js)</h4> 
 					</h4> 
@@ -541,7 +557,7 @@
 					<h8>Handle events that change Container style</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Container Component: Module<br/>
 						(caseList.js)</h4> 
 					</h4> 
@@ -550,7 +566,7 @@
 					<h8>Use helper functions to set and reset Styles</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Container Component: Module<br/>
 						(caseList.js)</h4> 
 					</h4> 
@@ -559,7 +575,7 @@
 					<h8>Broker the Item's DragStart event</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Container Component: Module<br/>
 						(caseList.js)</h4> 
 					</h4> 
@@ -569,7 +585,7 @@
 				</section>
 
 				<!-- MASTER COMPONENT -->
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Master Component: Markup<br/>
 						(casePicker.html)</h4> 
 					</h4> 
@@ -577,7 +593,7 @@
 					</br>
 					<h8>Wire the Container events to the Master</h8>
 				</section>
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Master Component: Module<br/>
 						(casePicker.js)</h4> 
 					</h4> 
@@ -585,7 +601,7 @@
 					</br>
 					<h8>Declare Apex and RecordUI imports and lists</h8>
 				</section>
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Master Component: Module<br/>
 						(casePicker.js)</h4> 
 					</h4> 
@@ -593,7 +609,7 @@
 					</br>
 					<h8>Use an @wire function to fetch and filter data lists</h8>
 				</section>
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Master Component: Module<br/>
 						(casePicker.js)</h4> 
 					</h4> 
@@ -602,11 +618,11 @@
 					<h8>Validate, Update and Refresh data on Drop</h8>
 			</section>
 
-				<section data-transition="slide-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="slide-in fade-out" >
 					<h3>Demo LWC...</h3> 
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Key Points</h4>
 					<h8 class="fragment fade-in-then-semi-out">Understand standard drag and drop events</h8><br/>					
 					<h8 class="fragment fade-in-then-semi-out">Don’t fight the framework</h8><br/>
@@ -617,11 +633,11 @@
 					<h8 class="fragment fade-in-then-semi-out">Use a Master Component for Data Processing</h8><br/>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h3>Where Can I Learn More?</h3>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Download and Dissect the Reference App</h4>
 					<table>
 						<tr>
@@ -639,7 +655,7 @@
 					<h8>https://github.com/forcementor/lwc-dnd-demos</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Download and Dissect the eBikes App </h4>
 					<a href="https://github.com/trailheadapps/ebikes-lwc" target="_none"> 						
 						<img src="img/eBikes.png" style="border:none;" width="60%"/>
@@ -648,7 +664,7 @@
 					<h8>https://github.com/trailheadapps/ebikes-lwc</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Learn Standard HTML Fundamentals</h4>
 					<a href="https://pluralsight.pxf.io/C0114" target="_none"> 						
 						<img src="img/craigCourse.png" style="border:none;" width="60%"/>
@@ -657,7 +673,7 @@
 					<h8>https://pluralsight.pxf.io/C0114</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Learn about Short-Stopping Handler Events</h4>					
 					<a href="https://medium.com/@jacobwarduk/how-to-correctly-use-preventdefault-stoppropagation-or-return-false-on-events-6c4e3f31aedb" target="_none"> 
 						<img src="img/MediumWard.png" style="border:none;" width="60%"/>
@@ -666,7 +682,7 @@
 					<h8>Medium.com</h8>					
 				</section>
 
-				<section data-transition="fade-in fade-out"  data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out"  >
 					<h4>Read about the Drag and Drop HTML standard </h4>
 					<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API" target="_none"> 
 						<img src="img/MDNContent.png" style="border:none;" width="60%"/>
@@ -675,7 +691,7 @@
 					<h8>Mozilla Developer Network</h8>
 				</section>
 				
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Watch this LWC Primer</h4>
 					<a href="https://pluralsight.pxf.io/C0066" target="_none"> 						
 						<img src="img/ChuckPbP.png" style="border:none;" width="60%"/>
@@ -684,7 +700,7 @@
 					<h8>https://pluralsight.pxf.io/C0066</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Visit the Salesfoce Play By Play Gallery</h4>
 					<table>
 						<tr>
@@ -701,7 +717,7 @@
 					<h8>www.sfplaybyplay.com</h8>
 				</section>
 
-				<section data-transition="fade-in fade-out" data-background-image="img/VD2020LogoUpperRight.png">
+				<section data-transition="fade-in fade-out" >
 					<h4>Saerch or Filter on Topic, Author, Trailhead Class</h4>
 					<a href="https://www.sfplaybyplay.com" target="_none"> 						
 						<img src="img/PbPTilesCallout.png" width="50%"/>
@@ -710,7 +726,7 @@
 					<h8>www.sfplaybyplay.com</h8>
 				</section>
 
-				<section style="text-align: left;" data-background-image="img/VD2020LogoUpperRight.png" data-transition="slow">
+				<section style="text-align: left;"  data-transition="slow">
 					<h4 style="color:White">Next Steps:</h4>
 					<ul style="color:White">
 						<li>Visit our sponsors!</li>
@@ -722,12 +738,18 @@
 						This presentation is on Github here:
 						<img src="img/lwc_dnd_20qr.png"  style="border:none;" height="25%" width="25%" align="right" />
 					</p>
-					<h4 style="color:White">Thanks!</h4>
+					<!-- <h4 style="color:White">Thanks!</h4> -->
 					<div style="font-size: 25px;">
 						<a href="https://forcementor.github.io/lwc_dnd_20">
 							<i>https://forcementor.github.io/lwc_dnd_20</i>
 						</a>	
 					</div>
+				</section>
+
+				<section data-background-size="contain" data-background-image="img/vds4.png" data-transition="slow" >
+				</section>
+
+				<section data-background-size="contain" data-background-image="img/vds5.png" data-transition="slow" >
 				</section>
 
 			</div>
