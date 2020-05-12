@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="en"><!-- version for VirtualDraamin2020 --><head>
+		<meta charset="utf-8">
+
+		<title>LWC ドラッグ アンド ドロップを探る</title>
+
+		<meta name="description" content="VirtualDreamin 2020 LWC presentation">
+		<meta name="author" content="Don Robins">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		<!-- For Chalkboard -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		
+		<!-- Overrides for styles -->
+		<style> 
+			
+			.reveal section img { background:none; border:none; box-shadow:none; } 
+			
+			[data-role="drag-drop-target"],
+			[data-role="drag-drop-source"] { 
+				float: left; 
+				width: 225px; 
+				height: 195px; 
+				margin: 0px; 
+				padding: 0px; 
+				text-align: center !important; 
+				vertical-align: middle; 
+				border: 3px dashed #ddd !important; 
+				border-radius: 4px; 
+			} 
+		
+		</style>
+
+
+		<style> 
+			#content { 
+				position: relative; 
+			} 
+			#content img { 
+				position: absolute; 
+				top: 5px; 
+				right: 70px; 
+			} 
+
+			/*
+			#language-link { 
+				position: relative; 
+				z-index:10;
+			} 
+			#language-link a { 
+				position: absolute; 
+				top: 35px; 
+				right: 20px; 
+			} 
+			*/
+
+			#language-link { 
+				position: relative; 
+				z-index:10;
+			} 
+
+			#language-link img { 
+				z-index:10;
+				position: absolute; 
+				top: 35px; 
+				left: 20px; 
+			} 
+
+
+			body { 
+				background: url('img/vd_background.png'); 
+				background-size: 100%; 
+			} 
+
+			.reveal section h6 {
+				font-size: 0.75em !important;
+			}
+
+		</style>
+		
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div id="content"><img src="img/whitelogo.png" height="75px" width="200px"/></div>
+
+		<div id="language-link">
+				<!--<a href="index.html" target="_none"> 						
+				<img src="img/FlagUS.png" height="15px" width="30px"/>
+				</a>-->
+				<img src="img/FlagJapan.png" height="15px" width="30px"/>
+		</div>
+
+		<div class="reveal">
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				
+				<!-- data-background-size="contain" -->
+				<section data-background-image="img/vds1.png" data-transition="slow" >
+				</section>
+
+				<section data-background-image="img/vds2_1.png" data-transition="slow" >
+				</section>
+
+				<section data-background-image="img/vds2_2.png" data-transition="slow" >
+				</section>
+
+				<section data-background-image="img/vds3.png" data-transition="slow" >
+				</section>
+				
+				<!-- 
+				<section data-transition="fade-in" data-transition="slow"  >
+					<h3>Exploring<br/>Drag and Drop<br/>with<br/>Lightning Web Components</h3>
+				</section>
+				-->
+
+				<section data-transition="fade-in fade-out" >
+					<h3>プレゼンテーションのリンクはこちら:</h3>
+					<img src="img/lwc_dnd_20qr.png"  style="border:none;" height="50%" width="50%" align="center" />
+					<div >
+						<h4>
+							<a href="https://forcementor.github.io/lwc_dnd_20">
+								<i>https://forcementor.github.io/lwc_dnd_20</i>
+							</a>
+						</h4>		
+					</div>
+				</section>	
+
+				<section data-transition="fade-in" data-transition="slow"  >
+
+					<table>
+						<tr>
+							<td>
+								<a href="index_ja.html#/5" target="_none">						
+									<div style="color:White">日本語 <img src="img/FlagJapan.png" height="20px" width="35px"/> </div>
+								</a>
+							</td>
+							<td>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+							</td>
+							<td>
+								<a href="index.html#/5" target="_none">					
+									<div style="color:Gray">English <img src="img/FlagUS.png" height="20px" width="35px"/></div> 	
+								</a>
+							</td>
+						</tr>
+					</table>
+
+				</section>
+
+				<section data-transition="slide" >
+					<h3>Don Robins</h3>
+					<h8>テクニカル エデュケーター</h8><br/>
+					<h8>Salesforce MVP 認定 8 年連続</h8><br/>
+					<h8>Salesforce 認定 PDII</h8><br/>
+					<h8>Salesforce トレーニング パートナー</h8><br/>
+					<h8>Salesforce 認定 インストラクター</h8><br/>
+					<h8>書籍、投稿、記事、Trailhead の著者</h8><br/>
+					<h8>Pluralsight &quot;Salesforce Play by Play&quot; のプロデューサー</h8><br/>
+				</section>
+
+				<section data-transition="slide-in fade-out" >
+					<h3>トピック</h3>
+					<h6 class="fragment fade-in-then-semi-out">ドラッグ アンド ドロップのユース ケース</h6>
+					<h6 class="fragment fade-in-then-semi-out">ドラッグ アンド ドロップとは？</h6><br/>
+					<h6 class="fragment fade-in-then-semi-out">ドラッグ アンド ドロップの概念</h6><br/>
+					<h6 class="fragment fade-in-then-semi-out">Visualforce における標準 HTML </h6><br/>
+					<h6 class="fragment fade-in-then-semi-out">密結合・疎結合 LWC</h6><br/>
+					<h6 class="fragment fade-in-then-semi-out">さらに詳しく学ぶには</h6><br/>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h3>ここでは<u>取り上げない</u>トピック</h3>
+					<h6 class="fragment fade-in-then-semi-out">フル ドラッグ アンド ドロップ JavaScript API</h6><br/>
+					<h6 class="fragment fade-in-then-semi-out">Aura におけるドラッグ アンド ドロップ</h6><br/>
+					<h6 class="fragment fade-in-then-semi-out">非 HTML プラットフォームにおけるドラッグ アンド ドロップ</h6><br/>
+					<h6 class="fragment fade-in-then-semi-out">モバイルおよびジェスチャー ベースのドラッグ アンド ドロップ</h6><br/>
+				</section>
+				
+				<!-- DRAG AND DROP USE CASES -->
+				<section data-transition="fade-in fade-out" >
+					<h3>Salesforce ユース ケース</h3>
+					<img src="img/dnd_kanban_sample.jpeg" /><br/>
+					<h8>カンバン</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h3>Salesforceユース ケース</h3>
+					<img src="img/dnd_map_sample.png" /><br/>
+					<h8>マッピング ロケーション</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h3>Salesforce ユース ケース</h3>
+					<img src="img/dnd_files_sample.png" /><br/>
+					<h8>ファイルのアップロード</h8>
+				</section>
+				
+				<!-- WHAT IS DRAG AND DROP -->
+				<section data-transition="fade-in fade-out" >
+					<h3>ドラッグ アンド ドロップとは？</h3>
+				</section>
+
+				<section data-transition="slide-in fade-out" >
+					<h3>ドラッグ アンド ドロップ</h3>
+					<h6>名詞</h6> 
+					<p>
+						ユーザが、ある要素を選択して<br/>
+						ページの別の場所に移動させることができる<br/>
+						プログラム上の仕組み<br/>
+					</p>	
+				</section>
+
+				<section data-transition="fade-in fade-out" 
+						 data-background-iframe="https://en.wikipedia.org/wiki/Drag_and_drop" 
+						 data-background-interactive >
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h3>ステップごとに見ていきましょう</h3>
+					<h8 class="fragment fade-in-then-semi-out">ユーザが表示されたある要素を「クリック」</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">ユーザが画面上でその要素を「ドラッグ」</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">ユーザが画面上のどこかにその要素を「ドロップ」</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">その要素が別の場所に表示される</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">関連付けられたロジックがデータに影響を及ぼす可能性がある</h8><br/>
+				</section>
+
+				<section data-transition="fade-in fade-out" > 
+					<table>
+						<tr>
+							<td>
+								<!-- Drag and Drop Sample -->
+								<div id="source-container" data-role="drag-drop-source">
+									<!-- Starting place for the image -->
+									<img id="case-image" 
+										draggable="true" 
+										width = "100%"
+										height = "165px"
+										src="https://www.kindpng.com/picc/m/420-4201774_manage-your-cases-and-matters-case-management-system.png" />
+								</div>
+							</td>
+							<td>
+								<div id="target-container" data-role="drag-drop-target">
+
+								</div>
+							</td>
+							<td>
+								<div id="another_target-container" data-role="drag-drop-target">
+
+								</div>
+							</td>
+						</tr>
+					</table>		
+				</section>	
+
+				<section data-transition="fade-in fade-out" >
+					<h3>HTML においてどのように機能するのか？</h3>
+					<h8 class="fragment fade-in-then-semi-out">移動可能な要素は「ドラッグ可能」として設定</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">コンテナ要素セットはリスナーと設定</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">イベントリスナーは JavaScript ハンドラにバインド</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">ハンドラは DTO ペイロードとドロップ効果に設定</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">ハンドラは DOM とデータを操作</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">ある特定のハンドラのみ必要</h8><br/>
+				</section>
+			
+				<section data-transition="fade-in fade-out" >
+					<h3>2 種類の HTML 要素</h3>
+					<table width="100%">
+						<tr>
+							<td width="50%">
+								<div class="fragment fade-in-then-semi-out">
+									<h4><u>ドラッグ可能な要素</u></h4>
+									<h8><p>ソース コンテナから<br/>
+										ターゲット コンテナに<br/>
+										ドラッグされた<br/>
+										選択要素<br/>
+										(例：URL、画像など)
+									</p></h8>
+								</div>
+							</td>
+							<td width="50%">
+								<div class="fragment fade-in-then-semi-out">
+									<h4><u>ターゲット コンテナ</u></h4>
+									<h8><p>選択した要素のドラッグ元<br/>
+										および/または<br/>
+										ドロップ先になりえる<br/>
+										コンテナ要素<br/>
+										(例：Div、リストなど)
+									</p></h8>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</section>		
+
+				<section data-transition="fade-in fade-out" >
+					<h3>それぞれ独自のイベントを持つ</h3>
+					<table width="100%">
+						<tr>
+							<td width="50%">
+								<div class="fragment fade-in">
+									<h4><u>ドラッグ可能な要素</u></h4>
+									<h8 class="fragment fade-in-then-semi-out">DragStart*</h8><br/>
+									<h8 class="fragment fade-in-then-semi-out">Drag</h8><br/>
+									<h8 class="fragment fade-in-then-semi-out">DragEnd</h8><br/>
+								</div>
+							</td>
+							<td width="50%">
+								<div class="fragment fade-in">
+									<h4><u>ターゲット コンテナ</u></h4>
+									<h8 class="fragment fade-in-then-semi-out">DragEnter*</h8><br/>
+									<h8 class="fragment fade-in-then-semi-out">DragOver*</h8><br/>
+									<h8 class="fragment fade-in-then-semi-out">DragLeave</h8><br/>
+									<h8 class="fragment fade-in-then-semi-out">Drop*</h8><br/>
+								</div>
+							</td>
+						</tr>
+					</table>
+					<br/>
+					<h4 class="fragment fade-in">複数のターゲット コンテナがある場合も多い</h4>
+				</section>		
+
+				<section data-transition="slide-in fade-out" >
+					<h4>(ドラッグ可能な要素)</h4>
+					<h3>DragStart* イベント</h3>
+					<h8 class="fragment fade-in-then-semi-out">ある要素が最初にドラッグされた時に起動</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">このイベントのハンドリングは必須</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">ドラッグされた要素の要素 ID を保存</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">ソース コンテナの要素 ID を保存</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">イベント DTO にデータおよびドロップ効果を読み込む</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">通常、CSS プレゼンテーションの設定に使用</h8><br/>
+				</section>
+
+				<section data-transition="slide-in fade-out" >
+					<h4>(ドラッグ可能な要素)</h4>
+					<h3>Drag イベント </h3>
+					<h8 class="fragment fade-in-then-semi-out">ある要素がドラッグされた時に起動</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">ミリ秒間隔で起動</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">このイベントのハンドリングは任意</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">通常、CSS プレゼンテーションの効果のために使用</h8><br/>
+				</section>
+
+				<section data-transition="slide-in fade-out" >
+					<h4>(ドラッグ可能な要素)</h4>
+					<h3>DragEnd イベント</h3>
+					<h8 class="fragment fade-in-then-semi-out">ドラッグ操作が終了した時に起動</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">このイベントのハンドリングは任意</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">通常、CSS プレゼンテーションの再設定のために使用</h8><br/>
+				</section>
+
+				<section data-transition="slide-in fade-out" >
+					<h4>ターゲット コンテナ</h4>
+					<h3>DragEnter* イベント</h3>
+					<h8 class="fragment fade-in-then-semi-out">アイテムが、有効なドロップターゲットに入った時に起動</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">このイベントのハンドリングは必須</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">ハンドラは preventDefault() を呼び出す必要がある</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">通常、CSS プレゼンテーションの再設定のために使用</h8><br/>
+				</section>
+
+				<section data-transition="slide-in fade-out" >
+					<h4>ターゲット コンテナ</h4>
+					<h3>DragOver*イベント</h3>
+					<h8 class="fragment fade-in-then-semi-out">アイテムが、有効なドロップターゲットにドラッグされた時に起動</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">ミリ秒間隔で起動</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">このイベントのハンドリングは必須</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">ハンドラは preventDefault() を呼び出すべき</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">通常、CSS プレゼンテーションの再設定のために使用</h8><br/>
+				</section>
+
+				<section data-transition="slide-in fade-out" >
+					<h4>ターゲット コンテナ</h4>
+					<h3>DragLeave イベント</h3>
+					<h8 class="fragment fade-in-then-semi-out">アイテムが、有効なドロップターゲットから出た時に起動</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">このイベントのハンドリングは任意</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">通常、CSS プレゼンテーションの再設定のために使用</h8><br/>
+				</section>
+
+				<section data-transition="slide-in fade-out" >
+					<h4>ターゲット コンテナ</h4>
+					<h3>Drop* イベント</h3>
+					<h8 class="fragment fade-in-then-semi-out">アイテムが、有効なドロップターゲットにドロップされた時に起動</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">このイベントのハンドリングは必須</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">ハンドラはpreventDefault() を呼び出すべき</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">ドラッグされた要素に関する DOM 変更を処理</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">あらゆる必須データ、あるいはロジックを処理</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">通常、CSS プレゼンテーションの再設定のために使用</h8><br/>
+				</section>
+				
+				<!-- SALESFORCE -->
+				<section data-transition="fade-in fade-out" >
+					<h3>標準 HTML<br/>
+						ドラッグ アンド ドロップを<br/>
+						Salesforce に<br/>
+						実装するには？
+					</h3>
+				</section>			
+
+				<section data-transition="fade-in fade-out" >
+					<h4>標準 HTML<br/>
+						ドラッグ アンド ドロップを Visualforce に実装する</h4>
+					<img src="img/CasePicker1.png" width="60%" />
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h3>Visualforce のデモをおこないます...</h3> 
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>HTML マルチプル コンテナ</h4>
+					<img src="img/htmlDivs.png" width="60%"/>
+					<br/>
+					<h8>Div コンテナの集まりを宣言</h8>
+				</section>
+
+				<!-- SLIDE 30 -->
+
+				<section data-transition="fade-in fade-out" >
+					<h4>ドラッグ可能な要素<br/>
+						(「新規」ソース コンテナ内)
+					</h4>
+					<img src="img/html1callout.png" width="40%" />
+					<br/>
+					<h8>ソース コンテナとドラッグ可能なアイテムを設定</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>可能性のあるドロップターゲット コンテナ<br/>
+						(「作動中」コンテナ)</h4>
+					<img src="img/html2callout.png" width="60%" />
+					<br/>
+					<h8>コンテナをドロップターゲットとして設定</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>可能性のあるドロップターゲット コンテナ<br/>
+						(「エスカレートされた」コンテナ)</h4>
+					<img src="img/html3callout.png" width="60%" />
+					<br/>
+					<h8>コンテナをドロップターゲットとして設定</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>イベントリスナーの設定</h4>
+					<img src="img/htmlHandlerJSCallout.png" width="60%" />
+					<br/>
+					<h8>セレクタを使用して要素を取り込みリスナーを追加</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>DragStart イベントハンドラ</h4>
+					<img height="75%" width="75%" src="img/htmlDragStartJS.png" />
+					<br/>
+					<h8>アイテムとコンテナ ID を保存</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>Drop イベントハンドラ</h4>
+					<img src="img/htmlDropJSCallout.png" width="60%" />
+					<br/>
+					<h8>アイテム ID を取り込んでターゲットコンテナを親に再指定</h8>
+				</section>
+
+				<section data-transition="slide-in fade-out"  >
+					<h3>標準 HTML<br/>
+						ドラッグ アンド ドロップを<br/>
+						Lightning Web コンポーネントに実装するには？</h3> 
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>LWC と標準 HTML の相違点</h4>
+					<h8 class="fragment fade-in-then-semi-out">どちらも DOM を操作、ただし異なる方法で…</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">LWC を使用してイベントを仲介</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">イベント DOT とドロップ効果を放棄…</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">カスタムイベントとデータペイロードを代わりに使用</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">データ操作を容易にする…</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">データ駆動型リアクティブ レンダリングを使用</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">(LWC においては標準 DOM 操作を避けること)</h8><br/>
+				</section>
+
+				<section data-transition="slide-in fade-out" >
+					<h3>重要なポイント</h3>
+					<h6>
+						<p class="fragment fade-in-then-semi-out">
+							LWC はドラッグ アンド ドロップイベントを<br/>
+							宣言およびハンドルしてカスタムイベントに仲介する
+						</p>
+						<p class="fragment fade-in-then-semi-out">
+							これらのメッセージはコンポーネント階層を上って<br/>
+							最上位のマスターコンポーネントに伝達される
+						</p>
+						<p class="fragment fade-in-then-semi-out">
+							マスターコンポーネントは、追跡されるプロパティに結合した<br/>
+							全てのデータを取り込んで更新する
+						</p>
+						<p class="fragment fade-in-then-semi-out">
+							追跡されるプロパティへの変更は<br/>
+							コンポーネント階層を下ってリアクティブレンダリングをトリガし<br/>
+							UI を最新の情報に更新する
+						</p>
+					</h6>	
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>2 種類のアーキテクチャにおけるアプローチ</h4>
+					<table width="100%">
+						<tr>
+							<td width="50%">
+								<div class="fragment fade-in-then-semi-out">
+									<h4><u>密結合</u></h4>
+									<h8><p>コンポーネントは<br/>
+										ソースおよびターゲット<br/>
+										コンテナ コンポーネントへ /  から<br/>
+										ドラッグできる
+									</p></h8>
+								</div>
+							</td>
+							<td width="50%">
+								<div class="fragment fade-in-then-semi-out">
+									<h4><u>疎結合</u></h4>
+									 <h8><p>
+										コンテナコンポーネントは<br/>
+										App Builder によって<br/>
+										Flexipageに追加され <br/>
+										PubSubと交信する<br/>
+									</p></h8>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</section>		
+
+				<section data-transition="slide-in fade-out"  >
+					<h4>密結合コンポーネント</h4>
+					<img src="img/CasePicker2.png" />
+				</section>
+
+				<section data-transition="slide-in fade-out" >
+					<h4>疎結合コンポーネント</h4>
+					<img src="img/CasePicker3.png" width="80%"/>
+				</section>
+
+				<section data-transition="slide-in fade-out" >
+					<h3>LWC のデモ...</h3> 
+				</section>
+				
+				<!-- DRAGGABLE COMPONENT -->
+				<section data-transition="fade-in fade-out" >
+					<h4>ドラッグ可能なコンポーネント： Markup<br/>
+						(caseItem.html)
+					</h4> 
+					<img src="img/case-item-HTMLCallout.png" draggable="false" width="50%"/> 
+					<br/>
+					<h8>アイテムをドラッグ可能に設定し、イベントをワイヤリング</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>ドラッグ可能なコンポーネント： Style<br/>
+						(caseItem.css)
+					</h4>
+					<img src="img/case-item-CSSCallout.png" draggable="false" width="40%"/> 
+					<br/>
+					<h8>アイテムコンポーネントのドラッグスタイルを定義</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>ドラッグ可能なコンポーネント： Module<br/>
+						(caseItem.js)
+					</h4>
+					<img src="img/case-item-JS-dragstartCallout.png"  draggable="false" width="60%" />
+					<br/>
+					<h8>ドラッグスタイルを設定し、ドラッグイベントを仲介</h8>
+				</section>
+				
+				<!-- CONTAINER COMPONENT --><section data-transition="fade-in fade-out" >
+					<h4>コンテナコンポーネント： Markup<br/>
+						(caseList.html)
+					</h4>
+					<img src="img/case-list-HTMLCallout.png" width="60%"/>
+					<br/>
+					<h8>コンテナとアイテムイベントの両方をワイヤリング</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>コンテナコンポーネント： Style<br/>
+						(caseList.css)
+					</h4>
+					<img src="img/case-list-CSS.png" width="40%"/>
+					<br/>
+					<h8>コンテナの DragOver スタイルを定義</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>コンテナコンポーネント：Module<br/>
+						(caseList.js)
+					</h4>
+					<img src="img/case-list-js-OverLeaveCallout.png" width="60%" />
+					<br/>
+					<h8>コンテナのスタイルを変更するイベントを処理</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>コンテナコンポーネント：Module<br/> 
+						(caseList.js)
+					</h4>
+					<img src="img/case-list-js-AddRemoveCallout.png" width="80%" />
+					<br/>
+					<h8>ヘルパ機能を使ってスタイルを設定および再設定</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>コンテナコンポーネント：Module<br/>
+						(caseList.js)
+					</h4>
+					<img src="img/case-list-JS-itemdrag.png" width="80%" />
+					<br/>
+					<h8>アイテムの DragStart イベントを仲介</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>コンテナコンポーネント：Module<br/> 
+						(caseList.js)
+					</h4>
+					<img src="img/case-list-JS-dropCallout.png" width="80%" />
+					<br/>
+					<h8>コンテナの Drop イベントを仲介</h8>
+				</section>
+				
+				<!-- MASTER COMPONENT -->
+				<section data-transition="fade-in fade-out" >
+					<h4>マスターコンポーネント：Markup<br/>
+						(casePicker.html)
+					</h4>
+					<img src="img/case-picker-HTMLCallout.png"  width="70%"/>
+					<br/>
+					<h8>マスターにコンテナイベントをワイヤリング</h8>
+				</section>
+				
+				<section data-transition="fade-in fade-out" >
+					<h4>マスターコンポーネント： Module<br/>
+						(casePicker.js)
+					</h4>
+					<img src="img/case-picker-JS-header.png" width="60%" />
+					<br/>
+					<h8>Apex と マスターコンポーネント：</h8>
+				</section>
+				
+				<section data-transition="fade-in fade-out" >
+					<h4>マスターコンポーネント： Module<br/>
+						(casePicker.js)
+					</h4>
+					<img src="img/case-picker-JS-datawire.png" width="60%" />
+					<br/>
+					<h8>@Wire 機能を使用してフィルタデータリストを取り込む</h8>
+				</section>
+				
+				<section data-transition="fade-in fade-out" >
+					<h4>マスターコンポーネント： Module<br/>
+						(casePicker.js) 
+					</h4>
+					<img src="img/case-picker-JS-update.png" width="60%" />
+					<br/>
+					<h8>Drop 時にデータを確認、アップデートし、最新の情報に更新</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>重要なポイント</h4>
+					<h8 class="fragment fade-in-then-semi-out">標準的なドラッグ アンド ドロップ イベントを理解する</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">フレームワークに逆らわない</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">カスタムイベントを活用する</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">データ機能を活用する</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">リアクティブ レンダリングを活用する</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">イベント ハンドラを使ってスタイルを変更する</h8><br/>
+					<h8 class="fragment fade-in-then-semi-out">データ処理にマスターコンポーネントを利用する</h8><br/>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h3>さらに詳しく学ぶには？</h3>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>リファレンスアプリをダウンロードして徹底解剖</h4>
+					<table>
+						<tr>
+							<td width="70%">
+								<a href="https://github.com/forcementor/lwc-dnd-demos" target="_none">
+									<img src="img/GitRepo.png" style="vertical-align:middle;" />
+								</a>
+							</td>
+							<td width="30%" >
+								<img src="img/GitDemo_QR.png" style="vertical-align:middle" />
+							</td>
+						</tr>
+					</table>
+					<br/>
+					<h8>https://github.com/forcementor/lwc-dnd-demos</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>eBikes アプリをダウンロードして徹底解剖</h4>
+					<a href="https://github.com/trailheadapps/ebikes-lwc" target="_none"> 
+						<img src="img/eBikes.png" style="border:none;" width="60%"/> 
+					</a> 
+					<br/>
+					<h8>https://github.com/trailheadapps/ebikes-lwc</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>標準 HTML 基礎知識を学ぶ</h4>
+					<a href="https://pluralsight.pxf.io/C0114" target="_none">
+						<img src="img/craigCourse.png" style="border:none;" width="60%"/>
+					</a>
+					<br/>
+					<h8>https://pluralsight.pxf.io/C0114</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>ハンドラでイベント伝播を停止する方法について学ぶ</h4>
+					<a href="https://medium.com/@jacobwarduk/how-to-correctly-use-preventdefault-stoppropagation-or-return-false-on-events-6c4e3f31aedb" target="_none">
+						<img src="img/MediumWard.png" style="border:none;" width="60%"/>
+					</a>
+					<br/>
+					<h8>Medium.com</h8>					
+				</section>
+
+				<section data-transition="fade-in fade-out"  >
+					<h4>ドラッグ アンド ドロップ HTML 標準について読む</h4>
+					<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API" target="_none">
+						<img src="img/MDNContent.png" style="border:none;" width="60%"/>
+					</a>
+					<br/>
+					<h8>Mozilla 開発者ネットワーク</h8>
+				</section>
+				
+				<section data-transition="fade-in fade-out" >
+					<h4>この LWC 入門編を視聴する</h4>
+					<a href="https://pluralsight.pxf.io/C0066" target="_none"> 
+						<img src="img/ChuckPbP.png" style="border:none;" width="60%"/> 
+					</a> 
+					<br/>
+					<h8>https://pluralsight.pxf.io/C0066</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>Salesforce Play By Play ギャラリーを閲覧する</h4>
+					<table>
+						<tr>
+							<td width="70%">
+								<a href="https://www.sfplaybyplay.com" target="_none"> 
+									<img src="img/PbPSiteCallout.png" style="vertical-align:middle;" /> 
+								</a>
+							</td>
+							<td width="30%" >
+								<img src="img/PbP_QR.png" style="vertical-align:middle" />
+							</td>
+						</tr>
+					</table>		
+					<h8>www.sfplaybyplay.com</h8>
+				</section>
+
+				<section data-transition="fade-in fade-out" >
+					<h4>トピック、著者、Trailhead クラスで検索およびフィルタ検索</h4>
+					<a href="https://www.sfplaybyplay.com" target="_none"> 
+						<img src="img/PbPTilesCallout.png" width="50%"/> 
+					</a> 
+					<br/>
+					<h8>www.sfplaybyplay.com</h8>
+				</section>
+
+				<section data-background-image="img/vds4.png" data-transition="slow" >
+				</section>
+
+				<section style="text-align: left;"  data-transition="slow">
+					<h4 style="color:White">アンケートの後の次のステップ：</h4>
+					<ul style="color:White">
+						<li>スポンサーを閲覧してください！</li>
+						<li>@donrobins と Pluralsight.com のフォローもよろしく！</li>
+						<li>学んだ知識は Ohana と共有</li>
+					</ul>
+					<br/>
+					<p style="color:White">
+						このプレゼンテーションは Github で閲覧できます 
+						<img src="img/lwc_dnd_20qr.png"  style="border:none;" height="25%" width="25%" align="right" />
+					</p>
+					<!-- <h4 style="color:White">Thanks!</h4> -->
+					<div style="font-size: 25px;">
+						<a href="https://forcementor.github.io/lwc_dnd_20">
+							<i>https://forcementor.github.io/lwc_dnd_20</i>
+						</a>
+					</div>
+				</section>
+
+				<section  data-background-image="img/vds5.png" data-transition="slow" >
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: 'c/t',
+				autoPlayMedia: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/chalkboard/chalkboard.js' },
+				],
+
+				chalkboard: { 
+					// optionally load pre-recorded chalkboard drawing from file
+					//src: "chalkboard.json",
+				},
+
+				keyboard: {
+					67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+					66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+					46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+					 8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+					68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+					88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
+					89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
+				},
+
+			});
+
+		</script>
+
+        <script>
+        
+			//Placeholder of the DRAG SOURCE parent container id
+			var sourceContainerId;
+			
+			var cancel = function(e) {
+				if (e.preventDefault) e.preventDefault();
+				if (e.stopPropagation) e.stopPropagation();
+				return false;
+			};
+
+			var dragStart = function(e) {
+				console.log('source: dragstart');
+				
+				//******************************************************************************	
+				//KEY POINTS
+				//******************************************************************************	
+				
+				//Load the DataTransfer object on the event with the element id
+				try {
+					e.dataTransfer.setData('text/plain', e.target.id);
+				} catch (ex) {
+					//For browsers that don't support text/plain
+					e.dataTransfer.setData('Text', e.target.id);
+				}
+				
+				//Capture the DRAG SOURCE parent container element
+				sourceContainerId = this.parentElement.id;
+				
+			};
+			
+			var drag = function(e) {
+				console.log('source: drag');
+			};
+
+			var dragEnd = function(e) {
+				console.log('source: dragend');
+			};
+
+			//==========================
+			//Target container events	
+			//==========================
+
+			//Event Handing is Required to drop
+			var dragEnter = function(e) {
+				cancel(e);  //Not required
+				console.log('target: dragenter');
+			};
+			
+			//Event Handing is Required to drop
+			var dragOver = function(e) {
+				cancel(e); // ** MUST CANCEL
+				console.log('target: dragover');
+			};
+			
+			//Event Handing is Optional
+			var dragLeave = function(e) {
+				console.log('target: dragleave');
+			};
+			
+			//Event Handing is Required to drop
+			var dropped = function(e) {
+				var id;
+				
+				console.log('target: drop');
+				
+				//******************************************************************************	
+				//KEY POINTS
+				//******************************************************************************	
+				
+				//Make sure the drop is on a different container than the original container 
+				//for the DRAG SOURCE
+				if (this.id !== sourceContainerId) {
+					
+					cancel(e);
+					
+					//Fetch the DRAG SOURCE element id from the event's DataTransfer object
+					try {
+						id = e.dataTransfer.getData('text/plain');
+					} catch (ex) {
+						//For browsers that don't support text/plain
+						id = e.dataTransfer.getData('Text');
+					}
+					
+					//Re-assign the DRAG SOURCE element to its new DROP TARGET parent element in the DOM
+					//which will rerender it in the new container
+					e.target.appendChild(document.querySelector('#' + id));
+					
+				}
+			};
+		
+			
+			//******************************************************************************	
+			//KEY POINTS
+			//******************************************************************************	
+			
+			//Add the event handlers for elements selected by data-role
+			var targets = document.querySelectorAll('[data-role="drag-drop-target"]');
+			[].forEach.call(targets, function(target) {
+				
+				//The DROP TARGET gets a listener for the drop event where
+				//the DRAG SOURCE Id will be fetched from the event's DataTransfer payload
+				//and the element will be re-parented to the DROP TARGET element
+				target.addEventListener('drop', dropped, false);
+				
+				target.addEventListener('dragenter', dragEnter, false);
+				target.addEventListener('dragover', dragOver, false);
+				target.addEventListener('dragleave', dragLeave, false);
+			});
+			
+			var sources = document.querySelectorAll('[draggable="true"]');
+			[].forEach.call(sources, function(source) {
+	
+				//The DRAG SOURCE gets a listener for the dragstart event where
+				//its element Id will be loaded into the event's DataTransfer payload
+				source.addEventListener('dragstart', dragStart, false);
+	
+				source.addEventListener('drag', drag, false);
+				source.addEventListener('dragend', dragEnd, false);
+			});            
+		</script>
+	
+
+
+	</body>
+</html>
