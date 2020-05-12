@@ -91,9 +91,15 @@
 				background-size: 100%; 
 			} 
 
+			/*
 			.reveal section h6 {
-				font-size: 0.75em !important;
+				font-size: 0.80em !important;
 			}
+			*/
+
+			.reveal section {
+				font-size: 0.80em !important;
+			}			
 
 		</style>
 		
@@ -173,50 +179,50 @@
 
 				<section data-transition="slide" >
 					<h3>Don Robins</h3>
-					<h8>テクニカル エデュケーター</h8><br/>
-					<h8>Salesforce MVP 認定 8 年連続</h8><br/>
-					<h8>Salesforce 認定 PDII</h8><br/>
-					<h8>Salesforce トレーニング パートナー</h8><br/>
-					<h8>Salesforce 認定 インストラクター</h8><br/>
-					<h8>書籍、投稿、記事、Trailhead の著者</h8><br/>
-					<h8>Pluralsight &quot;Salesforce Play by Play&quot; のプロデューサー</h8><br/>
+					テクニカル エデュケーター<br/>
+					Salesforce MVP 認定 8 年連続<br/>
+					Salesforce 認定 PDII<br/>
+					Salesforce トレーニング パートナー<br/>
+					Salesforce 認定 インストラクター<br/>
+					書籍、投稿、記事、Trailhead の著者<br/>
+					Pluralsight &quot;Salesforce Play by Play&quot; のプロデューサー<br/>
 				</section>
 
 				<section data-transition="slide-in fade-out" >
 					<h3>トピック</h3>
-					<h6 class="fragment fade-in-then-semi-out">ドラッグ アンド ドロップのユース ケース</h6>
-					<h6 class="fragment fade-in-then-semi-out">ドラッグ アンド ドロップとは？</h6><br/>
-					<h6 class="fragment fade-in-then-semi-out">ドラッグ アンド ドロップの概念</h6><br/>
-					<h6 class="fragment fade-in-then-semi-out">Visualforce における標準 HTML </h6><br/>
-					<h6 class="fragment fade-in-then-semi-out">密結合・疎結合 LWC</h6><br/>
-					<h6 class="fragment fade-in-then-semi-out">さらに詳しく学ぶには</h6><br/>
+					<span class="fragment fade-in-then-semi-out">ドラッグ アンド ドロップのユース ケース</span><br/>
+					<span class="fragment fade-in-then-semi-out">ドラッグ アンド ドロップとは？</span><br/>
+					<span class="fragment fade-in-then-semi-out">ドラッグ アンド ドロップの概念</span><br/>
+					<span class="fragment fade-in-then-semi-out">Visualforce における標準 HTML </span><br/>
+					<span class="fragment fade-in-then-semi-out">密結合・疎結合 LWC</span><br/>
+					<span class="fragment fade-in-then-semi-out">さらに詳しく学ぶには</span><br/>
 				</section>
 
 				<section data-transition="fade-in fade-out" >
 					<h3>ここでは<u>取り上げない</u>トピック</h3>
-					<h6 class="fragment fade-in-then-semi-out">フル ドラッグ アンド ドロップ JavaScript API</h6><br/>
-					<h6 class="fragment fade-in-then-semi-out">Aura におけるドラッグ アンド ドロップ</h6><br/>
-					<h6 class="fragment fade-in-then-semi-out">非 HTML プラットフォームにおけるドラッグ アンド ドロップ</h6><br/>
-					<h6 class="fragment fade-in-then-semi-out">モバイルおよびジェスチャー ベースのドラッグ アンド ドロップ</h6><br/>
+					<span class="fragment fade-in-then-semi-out">フル ドラッグ アンド ドロップ JavaScript API</span><br/>
+					<span class="fragment fade-in-then-semi-out">Aura におけるドラッグ アンド ドロップ</span><br/>
+					<span class="fragment fade-in-then-semi-out">非 HTML プラットフォームにおけるドラッグ アンド ドロップ</span><br/>
+					<span class="fragment fade-in-then-semi-out">モバイルおよびジェスチャー ベースのドラッグ アンド ドロップ</span><br/>
 				</section>
 				
 				<!-- DRAG AND DROP USE CASES -->
 				<section data-transition="fade-in fade-out" >
 					<h3>Salesforce ユース ケース</h3>
 					<img src="img/dnd_kanban_sample.jpeg" /><br/>
-					<h8>カンバン</h8>
+					<span>カンバン</span>
 				</section>
 
 				<section data-transition="fade-in fade-out" >
 					<h3>Salesforceユース ケース</h3>
 					<img src="img/dnd_map_sample.png" /><br/>
-					<h8>マッピング ロケーション</h8>
+					<span>マッピング ロケーション</span>
 				</section>
 
 				<section data-transition="fade-in fade-out" >
 					<h3>Salesforce ユース ケース</h3>
 					<img src="img/dnd_files_sample.png" /><br/>
-					<h8>ファイルのアップロード</h8>
+					<span>ファイルのアップロード</span>
 				</section>
 				
 				<!-- WHAT IS DRAG AND DROP -->
@@ -226,7 +232,7 @@
 
 				<section data-transition="slide-in fade-out" >
 					<h3>ドラッグ アンド ドロップ</h3>
-					<h6>名詞</h6> 
+					<span>名詞</span> 
 					<p>
 						ユーザが、ある要素を選択して<br/>
 						ページの別の場所に移動させることができる<br/>
@@ -241,11 +247,11 @@
 
 				<section data-transition="fade-in fade-out" >
 					<h3>ステップごとに見ていきましょう</h3>
-					<h8 class="fragment fade-in-then-semi-out">ユーザが表示されたある要素を「クリック」</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">ユーザが画面上でその要素を「ドラッグ」</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">ユーザが画面上のどこかにその要素を「ドロップ」</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">その要素が別の場所に表示される</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">関連付けられたロジックがデータに影響を及ぼす可能性がある</h8><br/>
+					<span class="fragment fade-in-then-semi-out">ユーザが表示されたある要素を「クリック」</span><br/>
+					<span class="fragment fade-in-then-semi-out">ユーザが画面上でその要素を「ドラッグ」</span><br/>
+					<span class="fragment fade-in-then-semi-out">ユーザが画面上のどこかにその要素を「ドロップ」</span><br/>
+					<span class="fragment fade-in-then-semi-out">その要素が別の場所に表示される</span><br/>
+					<span class="fragment fade-in-then-semi-out">関連付けられたロジックがデータに影響を及ぼす可能性がある</span><br/>
 				</section>
 
 				<section data-transition="fade-in fade-out" > 
@@ -278,12 +284,12 @@
 
 				<section data-transition="fade-in fade-out" >
 					<h3>HTML においてどのように機能するのか？</h3>
-					<h8 class="fragment fade-in-then-semi-out">移動可能な要素は「ドラッグ可能」として設定</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">コンテナ要素セットはリスナーと設定</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">イベントリスナーは JavaScript ハンドラにバインド</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">ハンドラは DTO ペイロードとドロップ効果に設定</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">ハンドラは DOM とデータを操作</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">ある特定のハンドラのみ必要</h8><br/>
+					<span class="fragment fade-in-then-semi-out">移動可能な要素は「ドラッグ可能」として設定</span><br/>
+					<span class="fragment fade-in-then-semi-out">コンテナ要素セットはリスナーと設定</span><br/>
+					<span class="fragment fade-in-then-semi-out">イベントリスナーは JavaScript ハンドラにバインド</span><br/>
+					<span class="fragment fade-in-then-semi-out">ハンドラは DTO ペイロードとドロップ効果に設定</span><br/>
+					<span class="fragment fade-in-then-semi-out">ハンドラは DOM とデータを操作</span><br/>
+					<span class="fragment fade-in-then-semi-out">ある特定のハンドラのみ必要</span><br/>
 				</section>
 			
 				<section data-transition="fade-in fade-out" >
@@ -293,23 +299,23 @@
 							<td width="50%">
 								<div class="fragment fade-in-then-semi-out">
 									<h4><u>ドラッグ可能な要素</u></h4>
-									<h8><p>ソース コンテナから<br/>
+									<span><p>ソース コンテナから<br/>
 										ターゲット コンテナに<br/>
 										ドラッグされた<br/>
 										選択要素<br/>
 										(例：URL、画像など)
-									</p></h8>
+									</p></span>
 								</div>
 							</td>
 							<td width="50%">
 								<div class="fragment fade-in-then-semi-out">
 									<h4><u>ターゲット コンテナ</u></h4>
-									<h8><p>選択した要素のドラッグ元<br/>
+									<span><p>選択した要素のドラッグ元<br/>
 										および/または<br/>
 										ドロップ先になりえる<br/>
 										コンテナ要素<br/>
 										(例：Div、リストなど)
-									</p></h8>
+									</p></span>
 								</div>
 							</td>
 						</tr>
@@ -323,18 +329,18 @@
 							<td width="50%">
 								<div class="fragment fade-in">
 									<h4><u>ドラッグ可能な要素</u></h4>
-									<h8 class="fragment fade-in-then-semi-out">DragStart*</h8><br/>
-									<h8 class="fragment fade-in-then-semi-out">Drag</h8><br/>
-									<h8 class="fragment fade-in-then-semi-out">DragEnd</h8><br/>
+									<span class="fragment fade-in-then-semi-out">DragStart*</span><br/>
+									<span class="fragment fade-in-then-semi-out">Drag</span><br/>
+									<span class="fragment fade-in-then-semi-out">DragEnd</span><br/>
 								</div>
 							</td>
 							<td width="50%">
 								<div class="fragment fade-in">
 									<h4><u>ターゲット コンテナ</u></h4>
-									<h8 class="fragment fade-in-then-semi-out">DragEnter*</h8><br/>
-									<h8 class="fragment fade-in-then-semi-out">DragOver*</h8><br/>
-									<h8 class="fragment fade-in-then-semi-out">DragLeave</h8><br/>
-									<h8 class="fragment fade-in-then-semi-out">Drop*</h8><br/>
+									<span class="fragment fade-in-then-semi-out">DragEnter*</span><br/>
+									<spanh8 class="fragment fade-in-then-semi-out">DragOver*</span><br/>
+									<span class="fragment fade-in-then-semi-out">DragLeave</span><br/>
+									<span class="fragment fade-in-then-semi-out">Drop*</span><br/>
 								</div>
 							</td>
 						</tr>
@@ -346,13 +352,16 @@
 				<section data-transition="slide-in fade-out" >
 					<h4>(ドラッグ可能な要素)</h4>
 					<h3>DragStart* イベント</h3>
-					<h8 class="fragment fade-in-then-semi-out">ある要素が最初にドラッグされた時に起動</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">このイベントのハンドリングは必須</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">ドラッグされた要素の要素 ID を保存</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">ソース コンテナの要素 ID を保存</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">イベント DTO にデータおよびドロップ効果を読み込む</h8><br/>
-					<h8 class="fragment fade-in-then-semi-out">通常、CSS プレゼンテーションの設定に使用</h8><br/>
+					<span class="fragment fade-in-then-semi-out">ある要素が最初にドラッグされた時に起動</span><br/>
+					<span class="fragment fade-in-then-semi-out">このイベントのハンドリングは必須</span><br/>
+					<span class="fragment fade-in-then-semi-out">ドラッグされた要素の要素 ID を保存</span><br/>
+					<span class="fragment fade-in-then-semi-out">ソース コンテナの要素 ID を保存</span><br/>
+					<span class="fragment fade-in-then-semi-out">イベント DTO にデータおよびドロップ効果を読み込む</span><br/>
+					<span class="fragment fade-in-then-semi-out">通常、CSS プレゼンテーションの設定に使用</span><br/>
 				</section>
+
+
+
 
 				<section data-transition="slide-in fade-out" >
 					<h4>(ドラッグ可能な要素)</h4>
@@ -502,7 +511,7 @@
 
 				<section data-transition="slide-in fade-out" >
 					<h3>重要なポイント</h3>
-					<h6>
+					<div>
 						<p class="fragment fade-in-then-semi-out">
 							LWC はドラッグ アンド ドロップイベントを<br/>
 							宣言およびハンドルしてカスタムイベントに仲介する
@@ -520,7 +529,7 @@
 							コンポーネント階層を下ってリアクティブレンダリングをトリガし<br/>
 							UI を最新の情報に更新する
 						</p>
-					</h6>	
+					</div>	
 				</section>
 
 				<section data-transition="fade-in fade-out" >
@@ -573,7 +582,7 @@
 					</h4> 
 					<img src="img/case-item-HTMLCallout.png" draggable="false" width="50%"/> 
 					<br/>
-					<h8>アイテムをドラッグ可能に設定し、イベントをワイヤリング</h8>
+					アイテムをドラッグ可能に設定し、イベントをワイヤリング
 				</section>
 
 				<section data-transition="fade-in fade-out" >
